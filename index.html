@@ -11,8 +11,10 @@
 <meta property="og:title" content="Praruj Thapa | ML & Computer Vision Engineer">
 <meta property="og:description" content="Machine Learning & Computer Vision Engineer based in Osaka, Japan">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://praruj.github.io/portfolio">
-<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet"/>
+<meta property="og:url" content="https://praruj.github.io/praruj-portfolio">
+
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@400;600;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet"/>
+<meta property="og:image" content="https://PRaruj.github.io/preview.png">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -124,10 +126,46 @@ h2{font-family:var(--sans);font-size:2rem;font-weight:700;color:#fff;margin-bott
 footer{border-top:1px solid var(--border);padding:1.8rem 2rem;text-align:center;font-family:var(--mono);font-size:10px;color:var(--text-dim);letter-spacing:1px}
 footer span{color:var(--green)}
 
-@media(max-width:640px){
-  .about-grid,.contact-wrap{grid-template-columns:1fr}
-  .tl-item{grid-template-columns:80px 1fr;gap:0.8rem}
-  nav ul{gap:0.9rem}
+/* JP font mode */
+body.jp .about-text p, body.jp .tl-desc, body.jp .proj-desc,
+body.jp .contact-intro, body.jp .edu-degree, body.jp .hero-meta,
+body.jp .hero-title, body.jp h2, body.jp .tl-role, body.jp .proj-title,
+body.jp .edu-school {
+  font-family:'Noto Sans JP',sans-serif;
+}
+body.jp .about-text p, body.jp .tl-desc, body.jp .proj-desc,
+body.jp .contact-intro, body.jp .hero-meta { font-size:12px; }
+
+/* Active nav section highlight */
+nav ul a.active { color:var(--green); }
+nav ul a.active::after { width:100%; }
+
+/* Smooth content transition */
+[data-en] { transition: opacity 0.15s ease; }
+
+/* Lang toggle as dual pill */
+.lang-toggle-wrap { display:flex; border:1px solid var(--border-bright); overflow:hidden; flex-shrink:0; }
+.lang-pill { font-family:var(--mono); font-size:11px; letter-spacing:1px; padding:0.3rem 0.85rem; background:transparent; color:var(--text-dim); cursor:pointer; border:none; transition:all 0.2s; }
+.lang-pill.active { background:var(--green); color:#000; font-weight:700; }
+.lang-pill:not(.active):hover { background:var(--green-glow); color:var(--green); }
+
+/* Download CV button */
+.btn-cv { border-color:rgba(240,192,64,0.6); color:#f0c040; }
+.btn-cv:hover { background:rgba(240,192,64,0.08); border-color:#f0c040; }
+
+/* Mobile hamburger */
+.hamburger { display:none; flex-direction:column; gap:4px; background:none; border:none; cursor:pointer; padding:4px; }
+.hamburger span { display:block; width:20px; height:2px; background:var(--green); transition:all 0.3s; }
+.nav-mobile-open ul { display:flex !important; }
+
+@media(max-width:700px){
+  nav ul { display:none; position:absolute; top:54px; left:0; right:0; background:rgba(10,12,14,0.98); flex-direction:column; padding:1rem 2rem; gap:1rem; border-bottom:1px solid var(--border); }
+  .hamburger { display:flex; }
+  .about-grid,.contact-wrap { grid-template-columns:1fr; }
+  .tl-item { grid-template-columns:72px 1fr; gap:0.8rem; }
+  .proj-grid { grid-template-columns:1fr; }
+  .skill-cats { grid-template-columns:1fr 1fr; }
+  nav { position:relative; flex-wrap:wrap; height:auto; min-height:54px; }
 }
 </style>
 </head>
@@ -143,7 +181,15 @@ footer span{color:var(--green)}
     <li><a href="#education" data-en="edu" data-ja="学歴">edu</a></li>
     <li><a href="#contact" data-en="contact" data-ja="連絡">contact</a></li>
   </ul>
-  <button onclick="toggleLanguage()" class="lang-toggle" id="lang-btn">日本語</button>
+  <div style="display:flex;align-items:center;gap:0.8rem;">
+    <div class="lang-toggle-wrap">
+      <button class="lang-pill active" id="pill-en" onclick="setLang('en')">EN</button>
+      <button class="lang-pill" id="pill-ja" onclick="setLang('ja')">日本語</button>
+    </div>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 </nav>
 
 <!-- HERO -->
@@ -153,16 +199,17 @@ footer span{color:var(--green)}
   <h1 class="hero-name">Praruj Thapa</h1>
   <div class="hero-title" data-en="Machine Learning &amp; Computer Vision Engineer" data-ja="機械学習・コンピュータビジョンエンジニア">Machine Learning &amp; Computer Vision Engineer</div>
   <p class="hero-meta" data-en="B.E. Electrical &amp; Mechanical Systems Engineering<br><strong>Kyoto University of Advanced Science</strong> · Osaka, Japan<br>ML &amp; Software Developer @ <strong>フクシマガリレイ株式会社</strong><br>AWS · Python · OpenCV · IoT · Data Analysis" 
-     data-ja="機械電気システム工学科 <br><strong>京都先端科学大学 工学部 </strong> · 大阪、日本<br>機械学習・ソフトウェア開発者 @ <strong>フクシマガリレイ株式会社</strong><br>AWS · Python · OpenCV · IoT · データ分析">
-    B.E. Electrical &amp; Mechanical Systems Engineering<br>
+     data-ja="機械電気システム工学科 · 卒業 2025<br><strong>京都先端科学大学 工学部</strong> · 大阪、日本<br>機械学習・ソフトウェア開発者 @ <strong>フクシマガリレイ株式会社</strong><br>AWS · Python · OpenCV · IoT · データ分析">
+    B.E. Electrical &amp; Mechanical Systems Engineering · Graduated 2025<br>
     <strong>Kyoto University of Advanced Science</strong> · Osaka, Japan<br>
     ML &amp; Software Developer @ <strong>フクシマガリレイ株式会社</strong><br>
     AWS · Python · OpenCV · IoT · Data Analysis<span class="cursor"></span>
   </p>
   <div class="hero-btns">
     <a href="#projects" class="btn" data-en="View Projects" data-ja="プロジェクトを見る">View Projects</a>
-    <a href="https://github.com/PRaruj" class="btn btn-ghost" data-en="GitHub →" data-ja="GitHub →">GitHub →</a>
+    <a href="https://github.com/PRaruj" class="btn btn-ghost" target="_blank" rel="noopener" data-en="GitHub →" data-ja="GitHub →">GitHub →</a>
     <a href="#contact" class="btn btn-ghost" data-en="Contact" data-ja="連絡する">Contact</a>
+    <a href="cv.pdf" class="btn btn-cv" download data-en="Download CV ↓" data-ja="履歴書をDL ↓">Download CV ↓</a>
   </div>
 </section>
 
@@ -361,7 +408,7 @@ footer span{color:var(--green)}
       <div>
         <div class="edu-school">Kyoto University of Advanced Science</div>
         <div class="edu-degree" data-en="Bachelor of Engineering — Electrical &amp; Mechanical Systems" data-ja="工学部 機械電気システム工学科">Bachelor of Engineering — Electrical &amp; Mechanical Systems</div>
-        <div class="edu-date" data-en="Sep 2021 – Sep 2025 · Kyoto, Japan" data-ja="2021年9月 – 2025年9月 · 京都、日本">Sep 2021 – Sep 2025 · Kyoto, Japan</div>
+        <div class="edu-date" data-en="Sep 2021 – Sep 2025 · Graduated · Kyoto, Japan" data-ja="2021年9月 – 2025年9月 · 卒業 · 京都、日本">Sep 2021 – Sep 2025 · Graduated · Kyoto, Japan</div>
       </div>
     </div>
     <div class="edu-item">
@@ -409,17 +456,44 @@ footer span{color:var(--green)}
 </footer>
 
 <script>
+// ── Language toggle ──────────────────────────────────────
 let currentLang = 'en';
-function toggleLanguage() {
-  currentLang = currentLang === 'en' ? 'ja' : 'en';
-  const btn = document.getElementById('lang-btn');
-  btn.textContent = currentLang === 'en' ? '日本語' : 'English';
-  document.documentElement.lang = currentLang;
+function setLang(lang) {
+  currentLang = lang;
+  document.documentElement.lang = lang;
+  document.body.classList.toggle('jp', lang === 'ja');
+  document.getElementById('pill-en').classList.toggle('active', lang === 'en');
+  document.getElementById('pill-ja').classList.toggle('active', lang === 'ja');
   document.querySelectorAll('[data-en]').forEach(el => {
-    const content = currentLang === 'ja' ? (el.dataset.ja || el.dataset.en) : el.dataset.en;
-    if (content) el.innerHTML = content;
+    const val = lang === 'ja' ? (el.dataset.ja || el.dataset.en) : el.dataset.en;
+    if (val !== undefined) el.innerHTML = val;
+  });
+  document.querySelectorAll('[data-placeholder-en]').forEach(el => {
+    el.placeholder = lang === 'ja' ? (el.dataset.placeholderJa || el.dataset.placeholderEn) : el.dataset.placeholderEn;
   });
 }
+
+// ── Active nav on scroll ─────────────────────────────────
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('nav ul a[href^="#"]');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => {
+    if (window.scrollY >= s.offsetTop - 80) current = s.id;
+  });
+  navLinks.forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+  });
+}, {passive: true});
+
+// ── Mobile hamburger ─────────────────────────────────────
+function toggleMenu() {
+  document.querySelector('nav').classList.toggle('nav-mobile-open');
+}
+// Close menu on link click
+navLinks.forEach(a => a.addEventListener('click', () => {
+  document.querySelector('nav').classList.remove('nav-mobile-open');
+}));
 </script>
 
 </body>
