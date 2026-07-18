@@ -80,8 +80,6 @@ Place your CV as `cv.pdf` in the repo root. The **Download CV** button in the he
 ```
 praruj-portfolio/
 ├── index.html
-├── cv.pdf          ← add this
-├── preview.png     ← add this for Open Graph link previews (1200×630px)
 └── README.md
 ```
 
@@ -194,8 +192,6 @@ open index.html        # macOS
 ```
 praruj-portfolio/
 ├── index.html
-├── cv.pdf          ← 追加してください
-├── preview.png     ← OGプレビュー用（1200×630px推奨）
 └── README.md
 ```
 
