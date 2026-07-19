@@ -3,19 +3,17 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<meta name="description" data-en="Praruj Thapa - Machine Learning, AI & Software developer based in Japan." 
-      data-ja="タパ  プラルズ - 機械学習・AI・ソフト開発">
+<meta name="description" content="Praruj Thapa - Machine Learning & Computer Vision Engineer based in Osaka, Japan.">
 <meta name="keywords" content="Machine Learning, Computer Vision, OpenCV, Python, IoT, AWS, Praruj Thapa">
-<title data-en="Praruj Thapa | ML & Computer Vision Engineer" data-ja="タパ プラルズ | ML & Computer Vision Engineer">Praruj Thapa | ML & Computer Vision Engineer</title>
+<title>Praruj Thapa | ML & AI Software Developer</title>
 
-  <!-- Open Graph -->
-<meta property="og:title" data-en="Praruj Thapa | ML & Computer Vision Engineer" data-ja="タパ プラルズ | ML & Computer Vision Engineer">
+<!-- Open Graph -->
+<meta property="og:title" content="Praruj Thapa | ML & AI Software Developer">
 <meta property="og:description" content="Machine Learning & Computer Vision Engineer based in Osaka, Japan">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://praruj.github.io/praruj-portfolio">
+<meta property="og:url" content="https://PRaruj.github.io/praruj-portfolio">
 
-<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@400;600;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet"/>
-<meta property="og:image" content="https://PRaruj.github.io/preview.png">
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -127,46 +125,10 @@ h2{font-family:var(--sans);font-size:2rem;font-weight:700;color:#fff;margin-bott
 footer{border-top:1px solid var(--border);padding:1.8rem 2rem;text-align:center;font-family:var(--mono);font-size:10px;color:var(--text-dim);letter-spacing:1px}
 footer span{color:var(--green)}
 
-/* JP font mode */
-body.jp .about-text p, body.jp .tl-desc, body.jp .proj-desc,
-body.jp .contact-intro, body.jp .edu-degree, body.jp .hero-meta,
-body.jp .hero-title, body.jp h2, body.jp .tl-role, body.jp .proj-title,
-body.jp .edu-school {
-  font-family:'Noto Sans JP',sans-serif;
-}
-body.jp .about-text p, body.jp .tl-desc, body.jp .proj-desc,
-body.jp .contact-intro, body.jp .hero-meta { font-size:12px; }
-
-/* Active nav section highlight */
-nav ul a.active { color:var(--green); }
-nav ul a.active::after { width:100%; }
-
-/* Smooth content transition */
-[data-en] { transition: opacity 0.15s ease; }
-
-/* Lang toggle as dual pill */
-.lang-toggle-wrap { display:flex; border:1px solid var(--border-bright); overflow:hidden; flex-shrink:0; }
-.lang-pill { font-family:var(--mono); font-size:11px; letter-spacing:1px; padding:0.3rem 0.85rem; background:transparent; color:var(--text-dim); cursor:pointer; border:none; transition:all 0.2s; }
-.lang-pill.active { background:var(--green); color:#000; font-weight:700; }
-.lang-pill:not(.active):hover { background:var(--green-glow); color:var(--green); }
-
-/* Download CV button */
-.btn-cv { border-color:rgba(240,192,64,0.6); color:#f0c040; }
-.btn-cv:hover { background:rgba(240,192,64,0.08); border-color:#f0c040; }
-
-/* Mobile hamburger */
-.hamburger { display:none; flex-direction:column; gap:4px; background:none; border:none; cursor:pointer; padding:4px; }
-.hamburger span { display:block; width:20px; height:2px; background:var(--green); transition:all 0.3s; }
-.nav-mobile-open ul { display:flex !important; }
-
-@media(max-width:700px){
-  nav ul { display:none; position:absolute; top:54px; left:0; right:0; background:rgba(10,12,14,0.98); flex-direction:column; padding:1rem 2rem; gap:1rem; border-bottom:1px solid var(--border); }
-  .hamburger { display:flex; }
-  .about-grid,.contact-wrap { grid-template-columns:1fr; }
-  .tl-item { grid-template-columns:72px 1fr; gap:0.8rem; }
-  .proj-grid { grid-template-columns:1fr; }
-  .skill-cats { grid-template-columns:1fr 1fr; }
-  nav { position:relative; flex-wrap:wrap; height:auto; min-height:54px; }
+@media(max-width:640px){
+  .about-grid,.contact-wrap{grid-template-columns:1fr}
+  .tl-item{grid-template-columns:80px 1fr;gap:0.8rem}
+  nav ul{gap:0.9rem}
 }
 </style>
 </head>
@@ -182,35 +144,26 @@ nav ul a.active::after { width:100%; }
     <li><a href="#education" data-en="edu" data-ja="学歴">edu</a></li>
     <li><a href="#contact" data-en="contact" data-ja="連絡">contact</a></li>
   </ul>
-  <div style="display:flex;align-items:center;gap:0.8rem;">
-    <div class="lang-toggle-wrap">
-      <button class="lang-pill active" id="pill-en" onclick="setLang('en')">EN</button>
-      <button class="lang-pill" id="pill-ja" onclick="setLang('ja')">日本語</button>
-    </div>
-    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
+  <button onclick="toggleLanguage()" class="lang-toggle" id="lang-btn">日本語</button>
 </nav>
 
 <!-- HERO -->
 <section id="hero">
   <div class="hero-grid"></div>
   <div class="hero-prefix" data-en="$ whoami" data-ja="$ whoami">$ whoami</div>
- <h1 class="hero-name" data-en="Praruj Thapa" data-ja="タパ プラルズ">Praruj Thapa</h1>
-<p class="hero-meta" data-en="ML &amp; Software Developer @ <strong>フクシマガリレイ株式会社</strong><br>B.E. Electrical &amp; Mechanical Systems Engineering · Graduated 2025<br><strong>Kyoto University of Advanced Science</strong><br>AWS · Python · OpenCV · IoT · Data Analysis<br>Osaka, Japan"
-   data-ja="機械学習・ソフトウェア開発者 @ <strong>フクシマガリレイ株式会社</strong><br>機械電気システム工学科 · 卒業 2025<br><strong>京都先端科学大学 工学部</strong><br>AWS · Python · OpenCV · IoT · データ分析<br>大阪、日本">
-  ML &amp; Software Developer @ <strong>フクシマガリレイ株式会社</strong><br>
-  B.E. Electrical &amp; Mechanical Systems Engineering · Graduated 2025<br>
-  <strong>Kyoto University of Advanced Science</strong><br>
-  AWS · Python · OpenCV · IoT · Data Analysis<br>
-  Osaka, Japan<span class="cursor"></span>
-</p>
+  <h1 class="hero-name">Praruj Thapa</h1>
+  <div class="hero-title" data-en="Machine Learning · AI · Software Developer" data-ja="機械学習 · AI · ソフトウェア開発者">Machine Learning · AI · Software Developer</div>
+  <p class="hero-meta" data-en="B.E. Electrical &amp; Mechanical Systems Engineering<br><strong>Kyoto University of Advanced Science</strong> · Osaka, Japan<br>ML &amp; Software Developer @ <strong>フクシマガリレイ株式会社</strong><br>AWS · Python · OpenCV · IoT · Data Analysis" 
+     data-ja="機械電気システム工学科 <br><strong>京都先端科学大学 工学部 </strong> · 大阪、日本<br>機械学習・ソフトウェア開発者 @ <strong>フクシマガリレイ株式会社</strong><br>AWS · Python · OpenCV · IoT · データ分析">
+    B.E. Electrical &amp; Mechanical Systems Engineering<br>
+    <strong>Kyoto University of Advanced Science</strong> · Osaka, Japan<br>
+    ML &amp; Software Developer @ <strong>フクシマガリレイ株式会社</strong><br>
+    AWS · Python · OpenCV · IoT · Data Analysis<span class="cursor"></span>
+  </p>
   <div class="hero-btns">
     <a href="#projects" class="btn" data-en="View Projects" data-ja="プロジェクトを見る">View Projects</a>
-    <a href="https://github.com/PRaruj" class="btn btn-ghost" target="_blank" rel="noopener" data-en="GitHub →" data-ja="GitHub →">GitHub →</a>
+    <a href="https://github.com/PRaruj" class="btn btn-ghost" data-en="GitHub →" data-ja="GitHub →">GitHub →</a>
     <a href="#contact" class="btn btn-ghost" data-en="Contact" data-ja="連絡する">Contact</a>
-    <a href="cv.pdf" class="btn btn-cv" download data-en="Download CV ↓" data-ja="履歴書をDL ↓">Download CV ↓</a>
   </div>
 </section>
 
@@ -222,27 +175,27 @@ nav ul a.active::after { width:100%; }
   <h2 data-en="About Me" data-ja="自己紹介">About Me</h2>
   <div class="about-grid">
     <div class="about-text">
-      <p data-en="<strong>「情けは人の為ならず」</strong><br><br>I am a Machine Learning &amp; Computer Vision Engineer with a B.E. in Electrical &amp; Mechanical Systems Engineering from Kyoto University of Advanced Science." 
-         data-ja="<strong>「情けは人の為ならず」</strong><br><br>私は機械学習・コンピュータビジョンエンジニアです。京都先端科学大学工学部機械電気システム工学科を卒業しました。">
-        <strong>「情けは人の為ならず」</strong><br><br>I am a Machine Learning &amp; Computer Vision Engineer with a B.E. in Electrical &amp; Mechanical Systems Engineering from Kyoto University of Advanced Science.
+      <p data-en="<strong>「情けは人の為ならず」</strong><br><br>I am a Machine Learning, AI &amp; Software Developer with a B.E. in Electrical &amp; Mechanical Systems Engineering from Kyoto University of Advanced Science." 
+         data-ja="<strong>「情けは人の為ならず」</strong><br><br>私は機械学習・AI・ソフトウェア開発者です。京都先端科学大学工学部機械電気システム工学科を卒業しました。">
+        <strong>「情けは人の為ならず」</strong><br><br>I am a Machine Learning, AI &amp; Software Developer with a B.E. in Electrical &amp; Mechanical Systems Engineering from Kyoto University of Advanced Science.
       </p>
-      <p data-en="My focus is on <strong>Computer Vision</strong> and Machine Learning — building real systems that can see, understand, and act on the physical world, from shelf-monitoring robots to automated lab equipment." 
-         data-ja="私の専門は<strong>コンピュータビジョン</strong>と機械学習です。棚監視ロボットから自動化実験装置まで、現実世界を「見て・理解し・行動する」実用的なシステムを構築しています。">
-        My focus is on <strong>Computer Vision</strong> and Machine Learning — building real systems that can see, understand, and act on the physical world, from shelf-monitoring robots to automated lab equipment.
+      <p data-en="At <strong>フクシマガリレイ株式会社</strong>, I build ML models, integrate local LLMs, perform time series and data analysis, and develop the full software stack — FastAPI backends, Streamlit dashboards, MySQL databases — that brings these models to production." 
+         data-ja="<strong>フクシマガリレイ株式会社</strong>にて、MLモデルの構築、ローカルLLMの統合、時系列・データ分析、そしてFastAPIバックエンドやStreamlitダッシュボードなど、モデルを本番環境へ届けるソフトウェアシステムの開発を担当しています。">
+        At <strong>フクシマガリレイ株式会社</strong>, I build ML models, integrate local LLMs, perform time series and data analysis, and develop the full software stack — FastAPI backends, Streamlit dashboards, MySQL databases — that brings these models to production.
       </p>
-      <p data-en="Currently working as an ML & Software Developer at <strong>フクシマガリレイ株式会社</strong> (Fukushima Galilei Co. Ltd.), applying CV and IoT to industrial challenges. Also a Rotaract founder and former podcast host — I believe leadership and communication are as important as code." 
-         data-ja="現在<strong>フクシマガリレイ株式会社</strong>にて機械学習・ソフトウェア開発者として勤務し、コンピュータビジョンとIoTを活用して産業課題に取り組んでいます。またRotaractクラブ創設者、元ポッドキャストホストとして、リーダーシップとコミュニケーションもコードと同じくらい重要だと考えています。">
-        Currently working as an ML & Software Developer at <strong>フクシマガリレイ株式会社</strong> (Fukushima Galilei Co. Ltd.), applying CV and IoT to industrial challenges. Also a Rotaract founder and former podcast host — I believe leadership and communication are as important as code.
+      <p data-en="Previously, I applied computer vision and IoT to build a real-time retail shelf monitoring system during my industry pre-capstone project — earning an exhibition award that directly led to my current role. I also believe leadership matters as much as code: Rotaract club founder and former podcast host." 
+         data-ja="以前は産業向けプレキャップストーンプロジェクトで、コンピュータビジョンとIoTを活用したリアルタイム棚監視システムを構築し展示会賞を受賞。その実績が現職への採用につながりました。ロータラクトクラブ創設者・元ポッドキャストホストとして、リーダーシップもコードと同様に重要だと考えています。">
+        Previously, I applied computer vision and IoT to build a real-time retail shelf monitoring system during my industry pre-capstone project — earning an exhibition award that directly led to my current role. I also believe leadership matters as much as code: Rotaract club founder and former podcast host.
       </p>
     </div>
     <div class="stat-grid">
       <div class="stat-card">
-        <div class="stat-num">2</div>
-        <div class="stat-label" data-en="Industry Projects" data-ja="産業プロジェクト">Industry Projects</div>
+        <div class="stat-num">1+</div>
+        <div class="stat-label" data-en="Yrs Industry Exp." data-ja="業界経験年数">Yrs Industry Exp.</div>
       </div>
       <div class="stat-card">
-        <div class="stat-num">25+</div>
-        <div class="stat-label" data-en="Skills Listed" data-ja="スキル一覧">Skills Listed</div>
+        <div class="stat-num">3+</div>
+        <div class="stat-label" data-en="ML Systems Built" data-ja="構築MLシステム">ML Systems Built</div>
       </div>
       <div class="stat-card">
         <div class="stat-num">2</div>
@@ -264,12 +217,12 @@ nav ul a.active::after { width:100%; }
   <h2 data-en="Work Experience" data-ja="職務経験">Work Experience</h2>
   <div class="timeline">
     <div class="tl-item">
-      <div class="tl-date" data-en="Current<br/>ML Dev" data-ja="現在<br/>ML開発">Current<br/>ML Dev</div>
+      <div class="tl-date" data-en="2025<br/>Present" data-ja="2025年<br/>現在">2025<br/>Present</div>
       <div class="tl-body">
         <div class="tl-company">フクシマガリレイ株式会社 · Full-time</div>
         <div class="tl-role" data-en="Machine Learning &amp; Software Developer" data-ja="機械学習・ソフトウェア開発者">Machine Learning &amp; Software Developer</div>
-        <p class="tl-desc" data-en="Developing ML and CV solutions for industrial applications. Working on real-time vision systems, IoT integration, and API development for precision instrument manufacturing workflows." data-ja="産業用途向けの機械学習およびコンピュータビジョンソリューションを開発。リアルタイム視覚システム、IoT統合、精密機器製造ワークフローのためのAPI開発に従事しています。">
-          Developing ML and CV solutions for industrial applications. Working on real-time vision systems, IoT integration, and API development for precision instrument manufacturing workflows.
+        <p class="tl-desc" data-en="Building ML models and AI solutions for industrial applications including local LLM integration and time series analysis. Developing the full software stack — FastAPI backends, Streamlit dashboards, MySQL databases — to bring models into production workflows." data-ja="ローカルLLM統合・時系列分析を含む産業向けMLモデル・AIソリューションを構築。FastAPIバックエンド、Streamlitダッシュボード、MySQLデータベースなどフルスタック開発を担当し、モデルを本番ワークフローへ導入しています。">
+          Building ML models and AI solutions for industrial applications including local LLM integration and time series analysis. Developing the full software stack — FastAPI backends, Streamlit dashboards, MySQL databases — to bring models into production workflows.
         </p>
       </div>
     </div>
@@ -304,6 +257,32 @@ nav ul a.active::after { width:100%; }
   <h2 data-en="Featured Projects" data-ja="注目のプロジェクト">Featured Projects</h2>
   <div class="proj-grid">
     <div class="proj-card">
+      <div class="proj-type" data-en="Industry · ML / AI" data-ja="業務 · ML / AI">Industry · ML / AI</div>
+      <div class="proj-title" data-en="ML Models &amp; Local LLM Integration" data-ja="MLモデル・ローカルLLM統合">ML Models &amp; Local LLM Integration</div>
+      <p class="proj-desc"
+        data-en="Designing and deploying ML models and locally-run LLMs for industrial use. Built FastAPI services and Streamlit interfaces so non-technical staff can interact with AI outputs directly."
+        data-ja="産業向けMLモデルおよびローカルLLMの設計・導入。FastAPIサービスとStreamlitインターフェースを構築し、非エンジニアスタッフがAI出力を直接活用できる環境を実現しました。">
+        Designing and deploying ML models and locally-run LLMs for industrial use. Built FastAPI services and Streamlit interfaces so non-technical staff can interact with AI outputs directly.
+      </p>
+      <div class="proj-stack">
+        <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Streamlit</span>
+        <span class="tag">Local LLM</span><span class="tag">MySQL</span><span class="tag">AWS</span>
+      </div>
+    </div>
+    <div class="proj-card">
+      <div class="proj-type" data-en="Industry · Data" data-ja="業務 · データ分析">Industry · Data</div>
+      <div class="proj-title" data-en="Time Series Analysis Pipeline" data-ja="時系列分析パイプライン">Time Series Analysis Pipeline</div>
+      <p class="proj-desc"
+        data-en="Built data analysis and time series pipelines to extract actionable insights from industrial sensor data. Integrated into Streamlit dashboards for monitoring equipment performance trends."
+        data-ja="産業用センサーデータから知見を抽出する時系列分析パイプラインを構築。設備パフォーマンストレンドを監視するStreamlitダッシュボードに統合しました。">
+        Built data analysis and time series pipelines to extract actionable insights from industrial sensor data. Integrated into Streamlit dashboards for monitoring equipment performance trends.
+      </p>
+      <div class="proj-stack">
+        <span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Time Series</span>
+        <span class="tag">Streamlit</span><span class="tag">MySQL</span>
+      </div>
+    </div>
+    <div class="proj-card">
       <div class="proj-type" data-en="Capstone · Shimadzu Corp" data-ja="卒業研究 · 島津製作所">Capstone · Shimadzu Corp</div>
       <div class="proj-title" data-en="Automated Cap Opening &amp; Closing Mechanism" data-ja="自動容器開閉機構">Automated Cap Opening &amp; Closing Mechanism</div>
       <p class="proj-desc" data-en="Automated mechanism for opening and closing screw-type laboratory container caps (15cl–50cl) in collaboration with Shimadzu Corporation — one of Japan's leading precision instrument companies." data-ja="島津製作所との共同プロジェクトで、ねじ式実験容器（15cl～50cl）の自動開閉機構を開発。日本を代表する精密機器メーカーの一つです。">
@@ -319,10 +298,10 @@ nav ul a.active::after { width:100%; }
       <div class="award">★ Capstone Exhibition Award 2025</div>
     </div>
     <div class="proj-card">
-      <div class="proj-type" data-en="Industry · Computer Vision" data-ja="産業プロジェクト · コンピュータビジョン">Industry · Computer Vision</div>
+      <div class="proj-type" data-en="Pre-Capstone · Computer Vision" data-ja="プレキャップストーン · CV">Pre-Capstone · Computer Vision</div>
       <div class="proj-title" data-en="Smart Showcase Management System" data-ja="スマートショーケース管理システム">Smart Showcase Management System</div>
-      <p class="proj-desc" data-en="Real-time shelf monitoring system for retail stores using Raspberry Pi + computer vision. Automatically detects and reports stock levels, reducing dependency on manual stock checks." data-ja="Raspberry Piとコンピュータビジョンを活用した小売店舗向けリアルタイム棚監視システム。在庫状況を自動検知・報告し、手作業での棚卸しを大幅に削減します。">
-        Real-time shelf monitoring system for retail stores using Raspberry Pi + computer vision. Automatically detects and reports stock levels, reducing dependency on manual stock checks.
+      <p class="proj-desc" data-en="Real-time shelf monitoring for retail stores using Raspberry Pi and computer vision with HSV color processing. Sent LINE Notify alerts on low stock, significantly reducing manual check dependency." data-ja="Raspberry PiとHSV色処理を用いたコンピュータビジョンで小売棚をリアルタイム監視。低在庫時にLINE通知を送信し、手動確認を大幅に削減しました。">
+        Real-time shelf monitoring for retail stores using Raspberry Pi and computer vision with HSV color processing. Sent LINE Notify alerts on low stock, significantly reducing manual check dependency.
       </p>
       <div class="proj-stack">
         <span class="tag">Python</span>
@@ -359,39 +338,45 @@ nav ul a.active::after { width:100%; }
   <h2 data-en="Technical Skills" data-ja="技術スキル">Technical Skills</h2>
   <div class="skill-cats">
     <div class="skill-cat">
-      <div class="skill-cat-title" data-en="Computer Vision &amp; ML" data-ja="コンピュータビジョン &amp; ML">Computer Vision &amp; ML</div>
+      <div class="skill-cat-title" data-en="ML &amp; AI" data-ja="ML・AI">ML &amp; AI</div>
       <div class="chips">
-        <span class="chip">OpenCV</span>
-        <span class="chip" data-en="Computer Vision" data-ja="コンピュータビジョン">Computer Vision</span>
         <span class="chip" data-en="Machine Learning" data-ja="機械学習">Machine Learning</span>
         <span class="chip" data-en="Deep Learning" data-ja="深層学習">Deep Learning</span>
+        <span class="chip">Local LLMs</span>
+        <span class="chip" data-en="Time Series Analysis" data-ja="時系列分析">Time Series Analysis</span>
+        <span class="chip" data-en="Data Analysis" data-ja="データ分析">Data Analysis</span>
+        <span class="chip">OpenCV</span>
       </div>
     </div>
     <div class="skill-cat">
-      <div class="skill-cat-title" data-en="Programming" data-ja="プログラミング">Programming</div>
+      <div class="skill-cat-title" data-en="Software Dev" data-ja="ソフトウェア開発">Software Dev</div>
       <div class="chips">
         <span class="chip">Python</span>
-        <span class="chip">MATLAB</span>
-        <span class="chip" data-en="API Integration" data-ja="API連携">API Integration</span>
-        <span class="chip">IoT</span>
+        <span class="chip">FastAPI</span>
+        <span class="chip">Streamlit</span>
+        <span class="chip">MySQL</span>
+        <span class="chip">GitHub</span>
+        <span class="chip">REST APIs</span>
       </div>
     </div>
     <div class="skill-cat">
-      <div class="skill-cat-title" data-en="Hardware &amp; CAD" data-ja="ハードウェア &amp; CAD">Hardware &amp; CAD</div>
+      <div class="skill-cat-title" data-en="Cloud &amp; Tools" data-ja="クラウド・ツール">Cloud &amp; Tools</div>
+      <div class="chips">
+        <span class="chip">AWS</span>
+        <span class="chip">PyTorch</span>
+        <span class="chip">Pandas</span>
+        <span class="chip">NumPy</span>
+        <span class="chip">MATLAB</span>
+        <span class="chip">Jupyter</span>
+      </div>
+    </div>
+    <div class="skill-cat">
+      <div class="skill-cat-title" data-en="Hardware &amp; CAD" data-ja="ハードウェア・CAD">Hardware &amp; CAD</div>
       <div class="chips">
         <span class="chip">Raspberry Pi</span>
         <span class="chip">Arduino</span>
         <span class="chip">SolidWorks CAD</span>
-        <span class="chip">Servo Motors</span>
-        <span class="chip">IR Sensors</span>
-      </div>
-    </div>
-    <div class="skill-cat">
-      <div class="skill-cat-title" data-en="Cloud &amp; Data" data-ja="クラウド &amp; データ">Cloud &amp; Data</div>
-      <div class="chips">
-        <span class="chip">AWS</span>
-        <span class="chip" data-en="Data Analysis" data-ja="データ分析">Data Analysis</span>
-        <span class="chip">Microsoft Office</span>
+        <span class="chip">IoT</span>
       </div>
     </div>
   </div>
@@ -431,8 +416,8 @@ nav ul a.active::after { width:100%; }
   <h2 data-en="Get in Touch" data-ja="お問い合わせ">Get in Touch</h2>
   <div class="contact-wrap">
     <div>
-      <p class="contact-intro" data-en="Open to grad school opportunities, research collaborations, and interesting CV/ML projects. Based in Osaka, Japan — happy to connect globally." data-ja="大学院進学、研究協力、コンピュータビジョン・機械学習の興味深いプロジェクトを歓迎します。大阪拠点 — 世界中どこからでもお気軽にご連絡ください。">
-        Open to grad school opportunities, research collaborations, and interesting CV/ML projects. Based in Osaka, Japan — happy to connect globally.
+      <p class="contact-intro" data-en="Open to new opportunities, research collaborations, and interesting ML/AI projects. Based in Osaka, Japan — available in both English and Japanese." data-ja="新しい機会、共同研究、ML・AIプロジェクトへの参加を歓迎します。大阪在住、日本語・英語どちらでも対応可能です。">
+        Open to new opportunities, research collaborations, and interesting ML/AI projects. Based in Osaka, Japan — available in both English and Japanese.
       </p>
       <div class="c-links">
         <a href="https://github.com/PRaruj" class="c-link" target="_blank" rel="noopener">
@@ -453,50 +438,21 @@ nav ul a.active::after { width:100%; }
 </section>
 
 <footer>
-  <span data-en="Praruj Thapa" data-ja="タパ プラルズ">Praruj Thapa</span> · 
-  <span data-en="Osaka, Japan" data-ja="大阪、日本">Osaka, Japan</span> · 
-  ML &amp; Computer Vision Engineer
+  <span>Praruj Thapa</span> · <span data-en="Osaka, Japan" data-ja="大阪、日本">Osaka, Japan</span> · ML &amp; AI Software Developer
 </footer>
 
 <script>
-// ── Language toggle ──────────────────────────────────────
 let currentLang = 'en';
-function setLang(lang) {
-  currentLang = lang;
-  document.documentElement.lang = lang;
-  document.body.classList.toggle('jp', lang === 'ja');
-  document.getElementById('pill-en').classList.toggle('active', lang === 'en');
-  document.getElementById('pill-ja').classList.toggle('active', lang === 'ja');
+function toggleLanguage() {
+  currentLang = currentLang === 'en' ? 'ja' : 'en';
+  const btn = document.getElementById('lang-btn');
+  btn.textContent = currentLang === 'en' ? '日本語' : 'English';
+  document.documentElement.lang = currentLang;
   document.querySelectorAll('[data-en]').forEach(el => {
-    const val = lang === 'ja' ? (el.dataset.ja || el.dataset.en) : el.dataset.en;
-    if (val !== undefined) el.innerHTML = val;
-  });
-  document.querySelectorAll('[data-placeholder-en]').forEach(el => {
-    el.placeholder = lang === 'ja' ? (el.dataset.placeholderJa || el.dataset.placeholderEn) : el.dataset.placeholderEn;
+    const content = currentLang === 'ja' ? (el.dataset.ja || el.dataset.en) : el.dataset.en;
+    if (content) el.innerHTML = content;
   });
 }
-
-// ── Active nav on scroll ─────────────────────────────────
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('nav ul a[href^="#"]');
-window.addEventListener('scroll', () => {
-  let current = '';
-  sections.forEach(s => {
-    if (window.scrollY >= s.offsetTop - 80) current = s.id;
-  });
-  navLinks.forEach(a => {
-    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
-  });
-}, {passive: true});
-
-// ── Mobile hamburger ─────────────────────────────────────
-function toggleMenu() {
-  document.querySelector('nav').classList.toggle('nav-mobile-open');
-}
-// Close menu on link click
-navLinks.forEach(a => a.addEventListener('click', () => {
-  document.querySelector('nav').classList.remove('nav-mobile-open');
-}));
 </script>
 
 </body>
