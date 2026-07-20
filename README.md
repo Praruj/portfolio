@@ -13,7 +13,7 @@
 
 > Personal portfolio for **Praruj Thapa**, Machine Learning & Computer Vision Engineer based in Osaka, Japan.
 
-🔗 **Live site:** [PRaruj.github.io/praruj-portfolio](https://PRaruj.github.io/praruj-portfolio)
+🔗 **Live site:** [PRaruj.github.io/praruj-portfolio](https://praruj.github.io/portfolio/)
 
 ---
 
