@@ -3,457 +3,563 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<meta name="description" content="Praruj Thapa - Machine Learning & Computer Vision Engineer based in Osaka, Japan.">
-<meta name="keywords" content="Machine Learning, Computer Vision, OpenCV, Python, IoT, AWS, Praruj Thapa">
-<title>Praruj Thapa | ML & AI Software Developer</title>
-
-<!-- Open Graph -->
-<meta property="og:title" content="Praruj Thapa | ML & AI Software Developer">
-<meta property="og:description" content="Machine Learning & Computer Vision Engineer based in Osaka, Japan">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://PRaruj.github.io/praruj-portfolio">
-
-<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet"/>
+<meta name="description" content="Praruj Thapa — ML & AI Software Developer based in Osaka, Japan. Building systems that understand data, predict outcomes, and put AI to work."/>
+<meta property="og:title" content="Praruj Thapa | ML & AI Developer"/>
+<meta property="og:description" content="Building systems that understand the past, predict the future, and act on it."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://PRaruj.github.io"/>
+<title>Praruj Thapa | ML & AI Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
 :root{
-  --green:#00ff9d;--green-dim:#00cc7a;--green-glow:rgba(0,255,157,0.12);
-  --bg:#0a0c0e;--bg2:#0d1117;--bg3:#111820;
-  --border:rgba(0,255,157,0.18);--border-bright:rgba(0,255,157,0.5);
-  --text:#c9d1d9;--text-dim:#6e7681;
-  --mono:'Share Tech Mono',monospace;--sans:'Rajdhani',sans-serif;
+  --ink:#080c14;--ink2:#0e1520;--ink3:#19222f;
+  --amber:#e8a030;--amber-dim:rgba(232,160,48,0.15);--amber-glow:rgba(232,160,48,0.08);
+  --teal:#4fc4cf;--teal-dim:rgba(79,196,207,0.12);
+  --white:#f0f4ff;--slate:#8892a4;--slate2:#5a6478;
+  --border:rgba(240,244,255,0.08);--border-warm:rgba(232,160,48,0.25);
+  --serif:"Fraunces",Georgia,serif;--sans:"Inter",system-ui,sans-serif;
+  --mono:"JetBrains Mono",monospace;--jp:"Noto Sans JP",sans-serif;
+  --max:760px;--wide:1100px;
 }
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.6;min-height:100vh}
-body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradient(to bottom,transparent,transparent 2px,rgba(0,0,0,0.025) 2px,rgba(0,0,0,0.025) 4px);pointer-events:none;z-index:1000}
-
+body{background:var(--ink);color:var(--white);font-family:var(--sans);line-height:1.7;min-height:100vh;-webkit-font-smoothing:antialiased}
+ 
 /* NAV */
-nav{position:sticky;top:0;z-index:100;background:rgba(10,12,14,0.93);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:54px}
-.nav-logo{font-family:var(--mono);color:var(--green);font-size:13px;letter-spacing:2px}
-.nav-logo span{color:var(--text-dim)}
-nav ul{display:flex;gap:1.6rem;list-style:none}
-nav ul a{font-family:var(--mono);font-size:11px;color:var(--text-dim);text-decoration:none;letter-spacing:1px;text-transform:uppercase;transition:color 0.2s;position:relative}
-nav ul a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--green);transition:width 0.3s}
-nav ul a:hover{color:var(--green)}
-nav ul a:hover::after{width:100%}
-
-/* Language Toggle */
-.lang-toggle{font-family:var(--mono);font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:0.35rem 0.9rem;border:1px solid var(--border-bright);background:transparent;color:var(--green);cursor:pointer;transition:all 0.2s;border-radius:4px}
-.lang-toggle:hover{background:var(--green-glow);border-color:var(--green)}
-
-/* SECTIONS */
-section{max-width:880px;margin:0 auto;padding:4.5rem 2rem}
-.sec-label{font-family:var(--mono);font-size:11px;color:var(--green);letter-spacing:3px;text-transform:uppercase;margin-bottom:0.4rem;display:flex;align-items:center;gap:6px}
-.sec-label::before{content:'//';color:var(--text-dim)}
-h2{font-family:var(--sans);font-size:2rem;font-weight:700;color:#fff;margin-bottom:2rem;line-height:1.2}
-.divider{width:100%;height:1px;background:linear-gradient(90deg,transparent,var(--border-bright),transparent);max-width:880px;margin:0 auto}
-
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:56px;background:rgba(8,12,20,0.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav-mark{font-family:var(--serif);font-size:1.1rem;font-weight:600;color:var(--white);letter-spacing:-0.02em}
+.nav-mark em{color:var(--amber);font-style:normal}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{font-size:0.73rem;font-weight:500;color:var(--slate);text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s}
+.nav-links a:hover,.nav-links a.active{color:var(--white)}
+.nav-right{display:flex;align-items:center;gap:1rem}
+.lang-wrap{display:flex;border:1px solid var(--border-warm);overflow:hidden}
+.lang-btn{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.05em;padding:0.28rem 0.8rem;background:transparent;color:var(--slate);border:none;cursor:pointer;transition:all 0.2s}
+.lang-btn.on{background:var(--amber);color:var(--ink);font-weight:700}
+.lang-btn:not(.on):hover{color:var(--amber)}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.hamburger span{display:block;width:22px;height:1.5px;background:var(--slate);transition:all 0.3s}
+ 
 /* HERO */
-#hero{min-height:calc(100vh - 54px);display:flex;flex-direction:column;justify-content:center;padding-top:2rem;padding-bottom:2rem;position:relative;max-width:880px;margin:0 auto}
-.hero-grid{position:absolute;right:0;top:0;width:42%;height:100%;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:36px 36px;mask-image:radial-gradient(ellipse at right center,rgba(0,0,0,0.35) 0%,transparent 68%);pointer-events:none}
-.hero-prefix{font-family:var(--mono);font-size:12px;color:var(--green);letter-spacing:2px;margin-bottom:0.8rem}
-.hero-name{font-family:var(--sans);font-size:clamp(2.4rem,5vw,4rem);font-weight:700;color:#fff;line-height:1.1;margin-bottom:0.4rem}
-.hero-title{font-family:var(--sans);font-size:clamp(1rem,2.5vw,1.5rem);font-weight:600;color:var(--green-dim);margin-bottom:1.2rem}
-.hero-meta{font-family:var(--mono);font-size:12px;color:var(--text-dim);margin-bottom:1.8rem;line-height:1.9;max-width:500px}
-.hero-meta strong{color:var(--green);font-weight:400}
-.cursor{display:inline-block;width:7px;height:13px;background:var(--green);vertical-align:middle;margin-left:3px;animation:blink 1s step-end infinite}
-@keyframes blink{50%{opacity:0}}
-.hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
-.btn{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;padding:0.65rem 1.5rem;border:1px solid var(--border-bright);background:transparent;color:var(--green);cursor:pointer;text-decoration:none;transition:all 0.2s;display:inline-block}
-.btn:hover{background:var(--green-glow);border-color:var(--green)}
-.btn-ghost{color:var(--text-dim);border-color:var(--border)}
-.btn-ghost:hover{color:var(--text);background:rgba(255,255,255,0.04);border-color:rgba(255,255,255,0.18)}
-
+#hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:8rem 2.5rem 5rem;max-width:var(--wide);margin:0 auto;position:relative}
+.hero-eye{font-family:var(--mono);font-size:0.7rem;color:var(--amber);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:2rem;opacity:0;animation:fadeUp 0.6s 0.2s forwards}
+.hero-reveal{margin-bottom:2.5rem}
+.hero-line{display:block;font-family:var(--serif);font-size:clamp(2.4rem,5.5vw,4.8rem);font-weight:300;line-height:1.15;letter-spacing:-0.03em;color:var(--white);opacity:0}
+.hero-line.gold{color:var(--amber);font-style:italic}
+.hero-line:nth-child(1){animation:fadeUp 0.7s 0.4s forwards}
+.hero-line:nth-child(2){animation:fadeUp 0.7s 0.65s forwards}
+.hero-line:nth-child(3){animation:fadeUp 0.7s 0.9s forwards}
+.hero-line:nth-child(4){animation:fadeUp 0.7s 1.1s forwards}
+.hero-sub{font-size:1rem;color:var(--slate);max-width:520px;line-height:1.8;margin-bottom:2.5rem;opacity:0;animation:fadeUp 0.7s 1.3s forwards}
+.hero-sub strong{color:var(--white);font-weight:500}
+.hero-stack{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:2.5rem;opacity:0;animation:fadeUp 0.7s 1.45s forwards}
+.s-tag{font-family:var(--mono);font-size:0.67rem;padding:0.28rem 0.72rem;border:1px solid var(--teal-dim);background:var(--teal-dim);color:var(--teal);letter-spacing:0.04em}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;opacity:0;animation:fadeUp 0.7s 1.6s forwards}
+.btn{font-size:0.8rem;font-weight:500;padding:0.75rem 1.75rem;text-decoration:none;cursor:pointer;border:none;transition:all 0.25s;display:inline-block;letter-spacing:0.03em}
+.btn-p{background:var(--amber);color:var(--ink)}
+.btn-p:hover{background:#f0b040;transform:translateY(-1px)}
+.btn-o{background:transparent;border:1px solid var(--border-warm);color:var(--amber)}
+.btn-o:hover{background:var(--amber-dim)}
+.btn-g{background:transparent;border:1px solid var(--border);color:var(--slate)}
+.btn-g:hover{color:var(--white);border-color:rgba(240,244,255,0.2)}
+.hero-scroll{position:absolute;bottom:2.5rem;left:2.5rem;display:flex;align-items:center;gap:0.75rem;font-family:var(--mono);font-size:0.63rem;color:var(--slate2);letter-spacing:0.1em;text-transform:uppercase;opacity:0;animation:fadeUp 0.7s 2s forwards}
+.scroll-line{width:40px;height:1px;background:var(--slate2)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+ 
+/* SHARED */
+.sec{padding:6rem 2.5rem;max-width:var(--wide);margin:0 auto}
+.sec-in{max-width:var(--max);margin:0 auto}
+hr.div{border:none;border-top:1px solid var(--border);max-width:var(--wide);margin:0 auto}
+.eye{font-family:var(--mono);font-size:0.7rem;color:var(--amber);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.75rem;display:flex;align-items:center;gap:0.75rem}
+.eye::before{content:"";display:block;width:24px;height:1px;background:var(--amber)}
+h2.st{font-family:var(--serif);font-weight:600;font-size:clamp(1.9rem,3.5vw,2.8rem);color:var(--white);letter-spacing:-0.03em;line-height:1.2;margin-bottom:2.5rem}
+ 
+/* BUILD */
+#build{background:var(--ink2)}
+.build-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--border);margin-top:3rem}
+.b-card{padding:2.5rem 2rem;border-right:1px solid var(--border);transition:background 0.3s}
+.b-card:last-child{border-right:none}
+.b-card:hover{background:var(--amber-glow)}
+.b-num{font-family:var(--mono);font-size:0.63rem;color:var(--amber);letter-spacing:0.1em;margin-bottom:1.5rem;display:block}
+.b-verb{font-family:var(--serif);font-size:2rem;font-weight:600;color:var(--white);letter-spacing:-0.03em;margin-bottom:0.5rem;line-height:1}
+.b-noun{font-family:var(--serif);font-size:0.95rem;font-weight:300;font-style:italic;color:var(--amber);margin-bottom:1.25rem;display:block}
+.b-desc{font-size:0.85rem;color:var(--slate);line-height:1.75}
+.b-tools{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:1.5rem}
+.tool{font-family:var(--mono);font-size:0.63rem;padding:0.2rem 0.6rem;border:1px solid var(--border);color:var(--slate2)}
+ 
 /* ABOUT */
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start}
-.about-text p{font-family:var(--mono);font-size:12px;color:var(--text-dim);line-height:1.9;margin-bottom:0.9rem}
-.about-text p strong{color:var(--green);font-weight:400}
-.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.9rem}
-.stat-card{border:1px solid var(--border);padding:1.1rem;background:var(--bg3);position:relative;overflow:hidden}
-.stat-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:var(--green)}
-.stat-num{font-family:var(--mono);font-size:1.8rem;color:var(--green);line-height:1;margin-bottom:4px}
-.stat-label{font-family:var(--mono);font-size:10px;color:var(--text-dim);letter-spacing:1px;text-transform:uppercase}
-
+.about-body{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.a-copy p{font-size:0.95rem;color:var(--slate);line-height:1.85;margin-bottom:1.25rem}
+.a-copy p strong{color:var(--white);font-weight:500}
+.a-copy p em{color:var(--amber);font-style:italic}
+.pullquote{border-left:2px solid var(--amber);padding:1.25rem 1.5rem;margin:2rem 0;font-family:var(--serif);font-size:1.15rem;font-weight:300;font-style:italic;color:var(--white);line-height:1.6}
+.a-card{border:1px solid var(--border);padding:1.5rem;background:var(--ink2);margin-bottom:1rem}
+.a-lbl{font-family:var(--mono);font-size:0.63rem;color:var(--amber);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.65rem;display:block}
+.a-val{font-size:0.9rem;color:var(--white);font-weight:500;line-height:1.5}
+.a-sub{font-size:0.78rem;color:var(--slate);margin-top:0.2rem}
+ 
+/* WORK */
+#work{background:var(--ink2)}
+.work-list{display:flex;flex-direction:column;gap:1px;margin-top:3rem}
+.w-item{background:var(--ink2);border:1px solid var(--border);transition:border-color 0.3s;overflow:hidden}
+.w-item:hover{border-color:var(--border-warm)}
+.w-hdr{display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center;padding:1.75rem 2rem;cursor:pointer}
+.w-ctx{font-family:var(--mono);font-size:0.67rem;color:var(--teal);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.4rem}
+.w-title{font-family:var(--serif);font-size:1.35rem;font-weight:600;color:var(--white);letter-spacing:-0.02em}
+.w-yr{font-family:var(--mono);font-size:0.68rem;color:var(--slate2);letter-spacing:0.05em;text-align:right}
+.w-plus{font-family:var(--mono);font-size:1rem;color:var(--amber);margin-top:0.25rem;transition:transform 0.3s;display:block;text-align:right}
+.w-item.open .w-plus{transform:rotate(45deg)}
+.w-body{max-height:0;overflow:hidden;transition:max-height 0.45s ease;border-top:1px solid transparent}
+.w-item.open .w-body{max-height:700px;border-top-color:var(--border)}
+.w-body-in{padding:2rem;display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.s-lbl{font-family:var(--mono);font-size:0.63rem;color:var(--slate2);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem;display:block}
+.s-txt{font-size:0.875rem;color:var(--slate);line-height:1.8;margin-bottom:1.5rem}
+.s-txt strong{color:var(--white);font-weight:500}
+.w-tags{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:0.5rem}
+.w-tag{font-family:var(--mono);font-size:0.63rem;padding:0.22rem 0.62rem;background:var(--teal-dim);border:1px solid rgba(79,196,207,0.2);color:var(--teal)}
+.award{display:inline-flex;align-items:center;gap:0.4rem;font-family:var(--mono);font-size:0.67rem;color:#f0c040;border:1px solid rgba(240,192,64,0.25);padding:0.3rem 0.75rem;background:rgba(240,192,64,0.05);margin-top:1rem}
+ 
 /* EXPERIENCE */
-.timeline{display:flex;flex-direction:column;gap:1.2rem}
-.tl-item{display:grid;grid-template-columns:120px 1fr;gap:1.5rem;align-items:start}
-.tl-date{font-family:var(--mono);font-size:10px;color:var(--text-dim);letter-spacing:1px;text-align:right;padding-top:4px;line-height:1.6}
-.tl-body{border:1px solid var(--border);padding:1.2rem;background:var(--bg3);transition:border-color 0.3s}
-.tl-body:hover{border-color:var(--border-bright)}
-.tl-company{font-family:var(--mono);font-size:10px;color:var(--green);letter-spacing:2px;text-transform:uppercase;margin-bottom:3px}
-.tl-role{font-family:var(--sans);font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:6px}
-.tl-desc{font-family:var(--mono);font-size:11px;color:var(--text-dim);line-height:1.7}
-
-/* PROJECTS */
-.proj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.3rem}
-.proj-card{border:1px solid var(--border);background:var(--bg3);padding:1.4rem;transition:border-color 0.3s,transform 0.2s;position:relative;overflow:hidden}
-.proj-card::after{content:'';position:absolute;top:0;right:0;width:0;height:0;border-left:18px solid transparent;border-top:18px solid var(--green);opacity:0;transition:opacity 0.3s}
-.proj-card:hover{border-color:var(--border-bright);transform:translateY(-3px)}
-.proj-card:hover::after{opacity:1}
-.proj-type{font-family:var(--mono);font-size:10px;color:var(--green);letter-spacing:1px;text-transform:uppercase;margin-bottom:0.6rem;display:flex;align-items:center;gap:6px}
-.proj-type::before{content:'';display:inline-block;width:5px;height:5px;background:var(--green);border-radius:50%}
-.proj-title{font-family:var(--sans);font-size:1rem;font-weight:700;color:#fff;margin-bottom:0.5rem}
-.proj-desc{font-family:var(--mono);font-size:11px;color:var(--text-dim);line-height:1.7;margin-bottom:0.9rem}
-.proj-stack{display:flex;flex-wrap:wrap;gap:5px}
-.tag{font-family:var(--mono);font-size:10px;padding:2px 7px;border:1px solid var(--border);color:var(--text-dim)}
-.award{display:inline-flex;align-items:center;gap:5px;font-family:var(--mono);font-size:10px;color:#f0c040;margin-top:8px;border:1px solid rgba(240,192,64,0.25);padding:3px 8px;background:rgba(240,192,64,0.05)}
-
-/* SKILLS */
-.skill-cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1.2rem;margin-bottom:2rem}
-.skill-cat{border:1px solid var(--border);padding:1.1rem;background:var(--bg3)}
-.skill-cat-title{font-family:var(--mono);font-size:10px;color:var(--green);letter-spacing:2px;text-transform:uppercase;margin-bottom:0.8rem}
-.chips{display:flex;flex-wrap:wrap;gap:5px}
-.chip{font-family:var(--mono);font-size:10px;padding:3px 9px;background:rgba(0,255,157,0.05);border:1px solid rgba(0,255,157,0.18);color:var(--text-dim)}
-
+.tl{position:relative;margin-top:3rem;padding-left:2rem}
+.tl::before{content:"";position:absolute;left:0;top:0.5rem;bottom:0;width:1px;background:var(--border)}
+.tl-item{position:relative;margin-bottom:2.5rem;padding-left:2rem}
+.tl-item::before{content:"";position:absolute;left:-2rem;top:0.5rem;width:7px;height:7px;background:var(--amber);border:2px solid var(--ink);border-radius:50%}
+.tl-period{font-family:var(--mono);font-size:0.68rem;color:var(--amber);letter-spacing:0.08em;margin-bottom:0.3rem;display:block}
+.tl-role{font-family:var(--serif);font-size:1.2rem;font-weight:600;color:var(--white);letter-spacing:-0.02em;margin-bottom:0.2rem}
+.tl-org{font-size:0.8rem;color:var(--slate);margin-bottom:0.75rem}
+.tl-desc{font-size:0.875rem;color:var(--slate);line-height:1.8}
+.tl-desc strong{color:var(--white);font-weight:500}
+ 
+/* CAPABILITIES */
+#caps{background:var(--ink2)}
+.caps-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:3rem}
+.c-card{border:1px solid var(--border);padding:1.75rem;background:var(--ink);transition:border-color 0.3s,transform 0.2s}
+.c-card:hover{border-color:var(--border-warm);transform:translateY(-2px)}
+.c-icon{font-size:1.3rem;margin-bottom:1rem;display:block}
+.c-title{font-family:var(--serif);font-size:1.05rem;font-weight:600;color:var(--white);margin-bottom:0.5rem;letter-spacing:-0.01em}
+.c-desc{font-size:0.82rem;color:var(--slate);line-height:1.75;margin-bottom:1rem}
+.c-chips{display:flex;flex-wrap:wrap;gap:0.35rem}
+.c-chip{font-family:var(--mono);font-size:0.62rem;padding:0.2rem 0.6rem;border:1px solid var(--border);color:var(--slate2)}
+ 
+/* EXPLORING */
+.exp-box{border:1px solid var(--border-warm);background:var(--amber-glow);padding:3rem;max-width:var(--max);margin:0 auto}
+.exp-lbl{font-family:var(--mono);font-size:0.68rem;color:var(--amber);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:1rem;display:block}
+.exp-title{font-family:var(--serif);font-size:1.75rem;font-weight:300;font-style:italic;color:var(--white);line-height:1.3;margin-bottom:1.5rem;letter-spacing:-0.02em}
+.exp-body{font-size:0.9rem;color:var(--slate);line-height:1.85}
+.exp-body strong{color:var(--white);font-weight:500}
+.exp-items{display:flex;flex-direction:column;gap:0.75rem;margin-top:1.75rem}
+.exp-item{display:flex;align-items:flex-start;gap:1rem;font-size:0.85rem;color:var(--slate);line-height:1.6}
+.exp-item::before{content:"→";color:var(--amber);font-family:var(--mono);flex-shrink:0;margin-top:0.05rem}
+ 
 /* EDUCATION */
-.edu-list{display:flex;flex-direction:column;gap:1.1rem}
-.edu-item{border:1px solid var(--border);padding:1.3rem;background:var(--bg3);display:grid;grid-template-columns:auto 1fr;gap:1.2rem;align-items:start;transition:border-color 0.3s}
-.edu-item:hover{border-color:var(--border-bright)}
-.edu-icon{width:40px;height:40px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:13px;color:var(--green);flex-shrink:0}
-.edu-school{font-family:var(--sans);font-size:1rem;font-weight:700;color:#fff;margin-bottom:3px}
-.edu-degree{font-family:var(--mono);font-size:11px;color:var(--text-dim);margin-bottom:3px}
-.edu-date{font-family:var(--mono);font-size:10px;color:var(--green);letter-spacing:1px}
-
+.edu-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:3rem}
+.edu-card{border:1px solid var(--border);padding:1.75rem;background:var(--ink2);transition:border-color 0.3s}
+.edu-card:hover{border-color:var(--border-warm)}
+.edu-badge{font-family:var(--mono);font-size:0.63rem;color:var(--teal);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.75rem;display:block}
+.edu-school{font-family:var(--serif);font-size:1.1rem;font-weight:600;color:var(--white);letter-spacing:-0.02em;margin-bottom:0.3rem}
+.edu-deg{font-size:0.82rem;color:var(--slate);margin-bottom:0.3rem}
+.edu-date{font-family:var(--mono);font-size:0.68rem;color:var(--amber);letter-spacing:0.05em}
+ 
 /* CONTACT */
-.contact-wrap{border:1px solid var(--border);padding:2.5rem;background:var(--bg3);display:grid;grid-template-columns:1fr 1fr;gap:3rem}
-.contact-intro{font-family:var(--mono);font-size:12px;color:var(--text-dim);line-height:1.9;margin-bottom:1.5rem}
-.c-links{display:flex;flex-direction:column;gap:0.7rem}
-.c-link{display:flex;align-items:center;gap:0.8rem;font-family:var(--mono);font-size:11px;color:var(--text-dim);text-decoration:none;padding:0.5rem;border:1px solid transparent;transition:all 0.2s}
-.c-link:hover{color:var(--green);border-color:var(--border);background:var(--green-glow)}
-.c-icon{width:26px;height:26px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--green);flex-shrink:0}
-
-footer{border-top:1px solid var(--border);padding:1.8rem 2rem;text-align:center;font-family:var(--mono);font-size:10px;color:var(--text-dim);letter-spacing:1px}
-footer span{color:var(--green)}
-
-@media(max-width:640px){
-  .about-grid,.contact-wrap{grid-template-columns:1fr}
-  .tl-item{grid-template-columns:80px 1fr;gap:0.8rem}
-  nav ul{gap:0.9rem}
+#contact{padding:7rem 2.5rem;max-width:var(--wide);margin:0 auto;text-align:center}
+.ct-head{font-family:var(--serif);font-size:clamp(2rem,4vw,3.5rem);font-weight:300;font-style:italic;color:var(--white);line-height:1.2;letter-spacing:-0.03em;margin-bottom:1.25rem}
+.ct-sub{font-size:0.95rem;color:var(--slate);max-width:480px;margin:0 auto 2.5rem;line-height:1.8}
+.ct-links{display:flex;justify-content:center;flex-wrap:wrap;gap:1rem;margin-bottom:3.5rem}
+.ct-link{display:flex;align-items:center;gap:0.65rem;font-family:var(--mono);font-size:0.77rem;color:var(--slate);text-decoration:none;padding:0.7rem 1.25rem;border:1px solid var(--border);transition:all 0.2s;letter-spacing:0.03em}
+.ct-link:hover{color:var(--white);border-color:var(--border-warm);background:var(--amber-glow)}
+.ct-icon{color:var(--amber)}
+.ct-note{font-family:var(--serif);font-size:0.95rem;font-style:italic;color:var(--slate2)}
+ 
+footer{border-top:1px solid var(--border);padding:1.5rem 2.5rem;display:flex;align-items:center;justify-content:space-between;font-family:var(--mono);font-size:0.67rem;color:var(--slate2);letter-spacing:0.05em}
+footer span{color:var(--amber)}
+ 
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.65s ease,transform 0.65s ease}
+.reveal.in{opacity:1;transform:none}
+ 
+/* JP */
+body.jp .a-copy p,body.jp .tl-desc,body.jp .s-txt,body.jp .b-desc,body.jp .c-desc,body.jp .exp-body,body.jp .ct-sub,body.jp .edu-deg{font-family:var(--jp);font-size:0.83rem}
+body.jp .hero-line,body.jp .ct-head,body.jp .exp-title,body.jp .b-verb,body.jp .w-title,body.jp .c-title,body.jp .tl-role,body.jp .edu-school,body.jp h2.st{font-family:var(--jp);font-weight:700;letter-spacing:0}
+ 
+/* RESPONSIVE */
+@media(max-width:860px){
+  .build-grid{grid-template-columns:1fr}
+  .b-card{border-right:none;border-bottom:1px solid var(--border)}
+  .b-card:last-child{border-bottom:none}
+  .about-body{grid-template-columns:1fr;gap:3rem}
+  .w-body-in{grid-template-columns:1fr}
+  .caps-grid{grid-template-columns:1fr}
+  .edu-grid{grid-template-columns:1fr}
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  nav.open .nav-links{display:flex;flex-direction:column;gap:1.25rem;position:absolute;top:56px;left:0;right:0;background:rgba(8,12,20,0.98);padding:1.5rem 2.5rem;border-bottom:1px solid var(--border)}
 }
+@media(max-width:540px){
+  .hero-line{font-size:clamp(1.9rem,8vw,2.8rem)}
+  .sec{padding:4rem 1.25rem}
+  #contact{padding:5rem 1.25rem}
+  .w-hdr{grid-template-columns:1fr;gap:0.5rem}
+  .ct-head{font-size:2rem}
+  footer{flex-direction:column;gap:0.5rem;text-align:center}
+}
+@media(prefers-reduced-motion:reduce){*{animation-duration:0.01ms !important;transition-duration:0.01ms !important}}
 </style>
 </head>
 <body>
-
-<nav>
-  <div class="nav-logo">&gt; <span>~/</span>praruj</div>
-  <ul>
-    <li><a href="#about" data-en="about" data-ja="自己紹介">about</a></li>
-    <li><a href="#experience" data-en="exp" data-ja="経歴">exp</a></li>
-    <li><a href="#projects" data-en="projects" data-ja="プロジェクト">projects</a></li>
-    <li><a href="#skills" data-en="skills" data-ja="スキル">skills</a></li>
-    <li><a href="#education" data-en="edu" data-ja="学歴">edu</a></li>
-    <li><a href="#contact" data-en="contact" data-ja="連絡">contact</a></li>
+ 
+<nav id="nav">
+  <div class="nav-mark">P<em>.</em>Thapa</div>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#build" data-en="What I Do" data-ja="専門領域">What I Do</a></li>
+    <li><a href="#about" data-en="About" data-ja="自己紹介">About</a></li>
+    <li><a href="#work" data-en="Projects" data-ja="プロジェクト">Projects</a></li>
+    <li><a href="#exp" data-en="Experience" data-ja="経歴">Experience</a></li>
+    <li><a href="#exploring" data-en="Exploring" data-ja="探求中">Exploring</a></li>
+    <li><a href="#contact" data-en="Contact" data-ja="連絡">Contact</a></li>
   </ul>
-  <button onclick="toggleLanguage()" class="lang-toggle" id="lang-btn">日本語</button>
+  <div class="nav-right">
+    <div class="lang-wrap">
+      <button class="lang-btn on" id="btn-en" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" id="btn-ja" onclick="setLang('ja')">日本語</button>
+    </div>
+    <button class="hamburger" onclick="toggleNav()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 </nav>
-
+ 
 <!-- HERO -->
 <section id="hero">
-  <div class="hero-grid"></div>
-  <div class="hero-prefix" data-en="$ whoami" data-ja="$ whoami">$ whoami</div>
-  <h1 class="hero-name">Praruj Thapa</h1>
-  <div class="hero-title" data-en="Machine Learning · AI · Software Developer" data-ja="機械学習 · AI · ソフトウェア開発者">Machine Learning · AI · Software Developer</div>
-  <p class="hero-meta" data-en="B.E. Electrical &amp; Mechanical Systems Engineering<br><strong>Kyoto University of Advanced Science</strong> · Osaka, Japan<br>ML &amp; Software Developer @ <strong>フクシマガリレイ株式会社</strong><br>AWS · Python · OpenCV · IoT · Data Analysis" 
-     data-ja="機械電気システム工学科 <br><strong>京都先端科学大学 工学部 </strong> · 大阪、日本<br>機械学習・ソフトウェア開発者 @ <strong>フクシマガリレイ株式会社</strong><br>AWS · Python · OpenCV · IoT · データ分析">
-    B.E. Electrical &amp; Mechanical Systems Engineering<br>
-    <strong>Kyoto University of Advanced Science</strong> · Osaka, Japan<br>
-    ML &amp; Software Developer @ <strong>フクシマガリレイ株式会社</strong><br>
-    AWS · Python · OpenCV · IoT · Data Analysis<span class="cursor"></span>
-  </p>
+  <div class="hero-eye" data-en="ML & AI Software Developer · Osaka, Japan" data-ja="機械学習・AIソフトウェア開発者 · 大阪、日本">ML & AI Software Developer · Osaka, Japan</div>
+  <div class="hero-reveal">
+    <span class="hero-line" data-en="I build systems" data-ja="私はシステムを">I build systems</span>
+    <span class="hero-line" data-en="that understand the past," data-ja="過去を理解し、">that understand the past,</span>
+    <span class="hero-line gold" data-en="predict the future," data-ja="未来を予測し、">predict the future,</span>
+    <span class="hero-line" data-en="and act on it." data-ja="そして行動する。">and act on it.</span>
+  </div>
+  <p class="hero-sub" data-en="My name is <strong>Praruj Thapa</strong>. I'm an ML & AI developer at <strong>フクシマガリレイ株式会社</strong> in Osaka — building models, integrating local LLMs, and developing the software that turns data into decisions." data-ja="タパ プラルズと申します。大阪の<strong>フクシマガリレイ株式会社</strong>にてML・AI開発者として勤務し、モデル構築・ローカルLLM統合・データを意思決定に変えるソフトウェアを開発しています。">My name is <strong>Praruj Thapa</strong>. I'm an ML & AI developer at <strong>フクシマガリレイ株式会社</strong> in Osaka — building models, integrating local LLMs, and developing the software that turns data into decisions.</p>
+  <div class="hero-stack">
+    <span class="s-tag">Python</span><span class="s-tag">FastAPI</span><span class="s-tag">Streamlit</span>
+    <span class="s-tag">Local LLMs</span><span class="s-tag">Time Series</span>
+    <span class="s-tag">MySQL</span><span class="s-tag">AWS</span><span class="s-tag">PyTorch</span>
+  </div>
   <div class="hero-btns">
-    <a href="#projects" class="btn" data-en="View Projects" data-ja="プロジェクトを見る">View Projects</a>
-    <a href="https://github.com/PRaruj" class="btn btn-ghost" data-en="GitHub →" data-ja="GitHub →">GitHub →</a>
-    <a href="#contact" class="btn btn-ghost" data-en="Contact" data-ja="連絡する">Contact</a>
+    <a href="#work" class="btn btn-p" data-en="See My Work" data-ja="プロジェクトを見る">See My Work</a>
+    <a href="cv.pdf" class="btn btn-o" download data-en="Download CV" data-ja="履歴書をDL">Download CV</a>
+    <a href="#contact" class="btn btn-g" data-en="Get in Touch" data-ja="連絡する">Get in Touch</a>
+  </div>
+  <div class="hero-scroll"><span class="scroll-line"></span><span data-en="scroll to explore" data-ja="スクロールして探る">scroll to explore</span></div>
+</section>
+ 
+<hr class="div"/>
+ 
+<!-- WHAT I DO -->
+<section id="build" class="sec">
+  <div class="sec-in">
+    <div class="eye" data-en="What I do" data-ja="専門領域">What I do</div>
+    <h2 class="st" data-en="Three things I'm good at." data-ja="3つの得意領域。">Three things I'm good at.</h2>
+  </div>
+  <div class="build-grid reveal">
+    <div class="b-card">
+      <span class="b-num">01</span>
+      <div class="b-verb" data-en="Understand" data-ja="理解する">Understand</div>
+      <span class="b-noun" data-en="the data, the system, the pattern" data-ja="データ・システム・パターン">the data, the system, the pattern</span>
+      <p class="b-desc" data-en="I build analysis pipelines and time series models that read what's already happened — finding the patterns that aren't obvious until a model points at them." data-ja="分析パイプラインと時系列モデルを構築し、すでに起きたことを読み解きます。モデルが指摘するまで気づかないパターンを発見します。">I build analysis pipelines and time series models that read what's already happened — finding the patterns that aren't obvious until a model points at them.</p>
+      <div class="b-tools"><span class="tool">Pandas</span><span class="tool">Time Series</span><span class="tool">Data Analysis</span><span class="tool">MySQL</span></div>
+    </div>
+    <div class="b-card">
+      <span class="b-num">02</span>
+      <div class="b-verb" data-en="Predict" data-ja="予測する">Predict</div>
+      <span class="b-noun" data-en="the outcome, the behavior, the next state" data-ja="結果・挙動・次の状態">the outcome, the behavior, the next state</span>
+      <p class="b-desc" data-en="I train and deploy ML models — and integrate local LLMs — so that systems don't just record what happened, they anticipate what's coming." data-ja="MLモデルのトレーニングとデプロイ、ローカルLLMの統合により、システムが過去の記録だけでなく、次を予測できるようにします。">I train and deploy ML models — and integrate local LLMs — so that systems don't just record what happened, they anticipate what's coming.</p>
+      <div class="b-tools"><span class="tool">PyTorch</span><span class="tool">ML Models</span><span class="tool">Local LLMs</span><span class="tool">AWS</span></div>
+    </div>
+    <div class="b-card">
+      <span class="b-num">03</span>
+      <div class="b-verb" data-en="Build" data-ja="構築する">Build</div>
+      <span class="b-noun" data-en="the interface, the pipeline, the product" data-ja="インターフェース・パイプライン・製品">the interface, the pipeline, the product</span>
+      <p class="b-desc" data-en="A model that no one can use is just a file. I build the FastAPI services and Streamlit interfaces that turn AI outputs into tools real people can work with." data-ja="誰も使えないモデルはただのファイルです。FastAPIサービスとStreamlitインターフェースを構築し、AI出力を実際に使えるツールに変えます。">A model that no one can use is just a file. I build the FastAPI services and Streamlit interfaces that turn AI outputs into tools real people can work with.</p>
+      <div class="b-tools"><span class="tool">FastAPI</span><span class="tool">Streamlit</span><span class="tool">Python</span><span class="tool">GitHub</span></div>
+    </div>
   </div>
 </section>
-
-<div class="divider"></div>
-
+ 
+<hr class="div"/>
+ 
 <!-- ABOUT -->
-<section id="about">
-  <div class="sec-label" data-en="01 &nbsp;ABOUT" data-ja="01 &nbsp;自己紹介">01 &nbsp;ABOUT</div>
-  <h2 data-en="About Me" data-ja="自己紹介">About Me</h2>
-  <div class="about-grid">
-    <div class="about-text">
-      <p data-en="<strong>「情けは人の為ならず」</strong><br><br>I am a Machine Learning, AI &amp; Software Developer with a B.E. in Electrical &amp; Mechanical Systems Engineering from Kyoto University of Advanced Science." 
-         data-ja="<strong>「情けは人の為ならず」</strong><br><br>私は機械学習・AI・ソフトウェア開発者です。京都先端科学大学工学部機械電気システム工学科を卒業しました。">
-        <strong>「情けは人の為ならず」</strong><br><br>I am a Machine Learning, AI &amp; Software Developer with a B.E. in Electrical &amp; Mechanical Systems Engineering from Kyoto University of Advanced Science.
-      </p>
-      <p data-en="At <strong>フクシマガリレイ株式会社</strong>, I build ML models, integrate local LLMs, perform time series and data analysis, and develop the full software stack — FastAPI backends, Streamlit dashboards, MySQL databases — that brings these models to production." 
-         data-ja="<strong>フクシマガリレイ株式会社</strong>にて、MLモデルの構築、ローカルLLMの統合、時系列・データ分析、そしてFastAPIバックエンドやStreamlitダッシュボードなど、モデルを本番環境へ届けるソフトウェアシステムの開発を担当しています。">
-        At <strong>フクシマガリレイ株式会社</strong>, I build ML models, integrate local LLMs, perform time series and data analysis, and develop the full software stack — FastAPI backends, Streamlit dashboards, MySQL databases — that brings these models to production.
-      </p>
-      <p data-en="Previously, I applied computer vision and IoT to build a real-time retail shelf monitoring system during my industry pre-capstone project — earning an exhibition award that directly led to my current role. I also believe leadership matters as much as code: Rotaract club founder and former podcast host." 
-         data-ja="以前は産業向けプレキャップストーンプロジェクトで、コンピュータビジョンとIoTを活用したリアルタイム棚監視システムを構築し展示会賞を受賞。その実績が現職への採用につながりました。ロータラクトクラブ創設者・元ポッドキャストホストとして、リーダーシップもコードと同様に重要だと考えています。">
-        Previously, I applied computer vision and IoT to build a real-time retail shelf monitoring system during my industry pre-capstone project — earning an exhibition award that directly led to my current role. I also believe leadership matters as much as code: Rotaract club founder and former podcast host.
-      </p>
-    </div>
-    <div class="stat-grid">
-      <div class="stat-card">
-        <div class="stat-num">1+</div>
-        <div class="stat-label" data-en="Yrs Industry Exp." data-ja="業界経験年数">Yrs Industry Exp.</div>
+<section id="about" class="sec">
+  <div class="sec-in">
+    <div class="eye" data-en="The person behind the models" data-ja="モデルの背後にある人物">The person behind the models</div>
+    <h2 class="st" data-en="Why I build what I build." data-ja="なぜこれを作るのか。">Why I build what I build.</h2>
+    <div class="about-body reveal">
+      <div class="a-copy">
+        <p data-en="Before I wrote a line of Python, I spent two and a half years hosting a podcast. Not because I wanted to be on air — but because <strong>I was obsessed with understanding people</strong>. Why do they feel what they feel? What are they really saying under the surface? That obsession didn't go away when I switched to engineering. It just found a new medium." data-ja="Pythonを書く前に、私は2年半ポッドキャストをホストしていました。放送に出たかったからではなく、<strong>人を理解することに夢中だった</strong>からです。なぜ人はそう感じるのか？表面の下に何が隠れているのか？その探究心はエンジニアリングに転向しても消えませんでした。ただ、媒体が変わっただけです。">Before I wrote a line of Python, I spent two and a half years hosting a podcast. Not because I wanted to be on air — but because <strong>I was obsessed with understanding people</strong>. Why do they feel what they feel? What are they really saying under the surface? That obsession didn't go away when I switched to engineering. It just found a new medium.</p>
+        <div class="pullquote" data-en="&ldquo;Data is just the world, speaking in numbers. I build systems that listen.&rdquo;" data-ja="「データとは、数字で語る世界そのものだ。私はそれを聴くシステムを作る。」">&ldquo;Data is just the world, speaking in numbers. I build systems that listen.&rdquo;</div>
+        <p data-en="At <strong>フクシマガリレイ株式会社</strong>, I work on ML pipelines, local LLM integrations, and the software that delivers these models to people who need them. The work is technical — but the goal is always the same: <em>make sense of something complex, then do something useful with that understanding</em>." data-ja="<strong>フクシマガリレイ株式会社</strong>では、MLパイプライン、ローカルLLM統合、そしてそれらを必要とする人々に届けるソフトウェアの開発に取り組んでいます。仕事は技術的ですが、目標は常に同じです：<em>複雑なものを理解し、その理解で有用なものを作る</em>。">At <strong>フクシマガリレイ株式会社</strong>, I work on ML pipelines, local LLM integrations, and the software that delivers these models to people who need them. The work is technical — but the goal is always the same: <em>make sense of something complex, then do something useful with that understanding</em>.</p>
+        <p data-en="I hold a B.E. in Electrical & Mechanical Systems from <strong>Kyoto University of Advanced Science</strong> (2025), based in Osaka, fluent in English and Japanese. The kind of person who founded a community, hosted a podcast for years, and still ended up writing ML pipelines — because I've never been interested in just one thing." data-ja="<strong>京都先端科学大学</strong>工学部機械電気システム工学科を2025年に卒業。大阪在住、英語と日本語に堪能。コミュニティを創設し、何年もポッドキャストをホストし、それでもMLパイプラインを書いている——それは、私が一つのことだけに興味を持ったことがないからです。">I hold a B.E. in Electrical & Mechanical Systems from <strong>Kyoto University of Advanced Science</strong> (2025), based in Osaka, fluent in English and Japanese. The kind of person who founded a community, hosted a podcast for years, and still ended up writing ML pipelines — because I've never been interested in just one thing.</p>
       </div>
-      <div class="stat-card">
-        <div class="stat-num">3+</div>
-        <div class="stat-label" data-en="ML Systems Built" data-ja="構築MLシステム">ML Systems Built</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-num">2</div>
-        <div class="stat-label" data-en="Project Awards" data-ja="プロジェクト受賞">Project Awards</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-num">JP</div>
-        <div class="stat-label" data-en="Based in Osaka" data-ja="大阪拠点">Based in Osaka</div>
+      <div>
+        <div class="a-card">
+          <span class="a-lbl" data-en="Currently at" data-ja="現在の所属">Currently at</span>
+          <div class="a-val">フクシマガリレイ株式会社</div>
+          <div class="a-sub" data-en="ML & Software Developer · Osaka" data-ja="機械学習・ソフトウェア開発者 · 大阪">ML & Software Developer · Osaka</div>
+        </div>
+        <div class="a-card">
+          <span class="a-lbl" data-en="Education" data-ja="学歴">Education</span>
+          <div class="a-val" data-en="Kyoto University of Advanced Science" data-ja="京都先端科学大学">Kyoto University of Advanced Science</div>
+          <div class="a-sub" data-en="B.E. Electrical & Mechanical Systems · 2025" data-ja="工学部機械電気システム工学科 · 2025年卒">B.E. Electrical & Mechanical Systems · 2025</div>
+        </div>
+        <div class="a-card">
+          <span class="a-lbl" data-en="Languages" data-ja="言語">Languages</span>
+          <div class="a-val">English · 日本語 · नेपाली</div>
+          <div class="a-sub" data-en="Fluent · Fluent · Native" data-ja="流暢 · 流暢 · 母国語">Fluent · Fluent · Native</div>
+        </div>
+        <div class="a-card">
+          <span class="a-lbl" data-en="Also" data-ja="その他">Also</span>
+          <div class="a-val" data-en="Rotaract Founder · Podcast Host" data-ja="ロータラクト創設者 · ポッドキャストホスト">Rotaract Founder · Podcast Host</div>
+          <div class="a-sub" data-en="Because code isn't everything." data-ja="コードだけがすべてではないから。">Because code isn't everything.</div>
+        </div>
       </div>
     </div>
   </div>
 </section>
-
-<div class="divider"></div>
-
-<!-- EXPERIENCE -->
-<section id="experience">
-  <div class="sec-label" data-en="02 &nbsp;EXPERIENCE" data-ja="02 &nbsp;経歴">02 &nbsp;EXPERIENCE</div>
-  <h2 data-en="Work Experience" data-ja="職務経験">Work Experience</h2>
-  <div class="timeline">
-    <div class="tl-item">
-      <div class="tl-date" data-en="2025<br/>Present" data-ja="2025年<br/>現在">2025<br/>Present</div>
-      <div class="tl-body">
-        <div class="tl-company">フクシマガリレイ株式会社 · Full-time</div>
-        <div class="tl-role" data-en="Machine Learning &amp; Software Developer" data-ja="機械学習・ソフトウェア開発者">Machine Learning &amp; Software Developer</div>
-        <p class="tl-desc" data-en="Building ML models and AI solutions for industrial applications including local LLM integration and time series analysis. Developing the full software stack — FastAPI backends, Streamlit dashboards, MySQL databases — to bring models into production workflows." data-ja="ローカルLLM統合・時系列分析を含む産業向けMLモデル・AIソリューションを構築。FastAPIバックエンド、Streamlitダッシュボード、MySQLデータベースなどフルスタック開発を担当し、モデルを本番ワークフローへ導入しています。">
-          Building ML models and AI solutions for industrial applications including local LLM integration and time series analysis. Developing the full software stack — FastAPI backends, Streamlit dashboards, MySQL databases — to bring models into production workflows.
-        </p>
-      </div>
-    </div>
-    <div class="tl-item">
-      <div class="tl-date" data-en="May 2020<br/>Sep 2022" data-ja="2020年5月<br/>2022年9月">May 2020<br/>Sep 2022</div>
-      <div class="tl-body">
-        <div class="tl-company">Guffadi Cast · Freelance</div>
-        <div class="tl-role" data-en="Podcast Host" data-ja="ポッドキャストホスト">Podcast Host</div>
-        <p class="tl-desc" data-en="Hosted a Nepali podcast creating diverse content to touch life and emotions of people and motivate them. Developed content writing, communication, and audience engagement skills over 2.5 years." data-ja="ネパール語ポッドキャストをホストし、人々の生活や感情に寄り添う多様なコンテンツを作成・発信。2年半にわたり、コンテンツ制作、コミュニケーション、オーディエンスエンゲージメントのスキルを磨きました。">
-          Hosted a Nepali podcast creating diverse content to touch life and emotions of people and motivate them. Developed content writing, communication, and audience engagement skills over 2.5 years.
-        </p>
-      </div>
-    </div>
-    <div class="tl-item">
-      <div class="tl-date" data-en="Jun 2022<br/>Present" data-ja="2022年6月<br/>現在">Jun 2022<br/>Present</div>
-      <div class="tl-body">
-        <div class="tl-company">Rotaract · Volunteer</div>
-        <div class="tl-role" data-en="Founder &amp; Former Secretary" data-ja="創設者・元事務局長">Founder &amp; Former Secretary</div>
-        <p class="tl-desc" data-en="Founding member and former Secretary of Rotaract Club of Dakshinkali. Spearheaded sanitation programs at Champadevi Temple. Instrumental in fostering youth engagement and fellowship." data-ja="Dakshinkali Rotaractクラブの創設メンバーおよび元事務局長。チャンパデヴィ寺院での衛生プログラムを主導。若い世代の参加と交流促進に貢献しました。">
-          Founding member and former Secretary of Rotaract Club of Dakshinkali. Spearheaded sanitation programs at Champadevi Temple. Instrumental in fostering youth engagement and fellowship.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
+ 
+<hr class="div"/>
+ 
 <!-- PROJECTS -->
-<section id="projects">
-  <div class="sec-label" data-en="03 &nbsp;PROJECTS" data-ja="03 &nbsp;プロジェクト">03 &nbsp;PROJECTS</div>
-  <h2 data-en="Featured Projects" data-ja="注目のプロジェクト">Featured Projects</h2>
-  <div class="proj-grid">
-    <div class="proj-card">
-      <div class="proj-type" data-en="Industry · ML / AI" data-ja="業務 · ML / AI">Industry · ML / AI</div>
-      <div class="proj-title" data-en="ML Models &amp; Local LLM Integration" data-ja="MLモデル・ローカルLLM統合">ML Models &amp; Local LLM Integration</div>
-      <p class="proj-desc"
-        data-en="Designing and deploying ML models and locally-run LLMs for industrial use. Built FastAPI services and Streamlit interfaces so non-technical staff can interact with AI outputs directly."
-        data-ja="産業向けMLモデルおよびローカルLLMの設計・導入。FastAPIサービスとStreamlitインターフェースを構築し、非エンジニアスタッフがAI出力を直接活用できる環境を実現しました。">
-        Designing and deploying ML models and locally-run LLMs for industrial use. Built FastAPI services and Streamlit interfaces so non-technical staff can interact with AI outputs directly.
-      </p>
-      <div class="proj-stack">
-        <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Streamlit</span>
-        <span class="tag">Local LLM</span><span class="tag">MySQL</span><span class="tag">AWS</span>
+<section id="work" class="sec">
+  <div class="sec-in">
+    <div class="eye" data-en="Selected work" data-ja="主なプロジェクト">Selected work</div>
+    <h2 class="st" data-en="What I've built." data-ja="構築してきたもの。">What I've built.</h2>
+  </div>
+  <div class="work-list reveal">
+ 
+    <div class="w-item" onclick="toggleWork(this)">
+      <div class="w-hdr">
+        <div><div class="w-ctx" data-en="Industry · ML / AI · フクシマガリレイ" data-ja="業務 · ML/AI · フクシマガリレイ">Industry · ML / AI · フクシマガリレイ</div><div class="w-title" data-en="ML Models & Local LLM Integration" data-ja="MLモデル・ローカルLLM統合">ML Models & Local LLM Integration</div></div>
+        <div><div class="w-yr">2025</div><span class="w-plus">+</span></div>
       </div>
+      <div class="w-body"><div class="w-body-in">
+        <div>
+          <span class="s-lbl" data-en="The problem" data-ja="課題">The problem</span>
+          <p class="s-txt" data-en="Industrial workflows generate enormous amounts of data, but the people who need to act on it aren't data scientists. They need AI that fits how they already work." data-ja="産業ワークフローは膨大なデータを生み出しますが、それに基づいて行動する人はデータサイエンティストではありません。既存のワークフローに合ったAIが必要です。">Industrial workflows generate enormous amounts of data, but the people who need to act on it aren't data scientists. They need AI that fits how they already work.</p>
+          <span class="s-lbl" data-en="What I built" data-ja="構築したもの">What I built</span>
+          <p class="s-txt" data-en="Designed and deployed ML models and locally-run LLMs for internal industrial use. Built <strong>FastAPI backends</strong> and <strong>Streamlit interfaces</strong> so non-technical staff can interact with AI directly — no Python required." data-ja="社内産業向けMLモデルとローカルLLMを設計・デプロイ。<strong>FastAPIバックエンド</strong>と<strong>Streamlitインターフェース</strong>を構築し、非技術者がAIと直接やり取りできる環境を実現しました。">Designed and deployed ML models and locally-run LLMs for internal industrial use. Built <strong>FastAPI backends</strong> and <strong>Streamlit interfaces</strong> so non-technical staff can interact with AI directly — no Python required.</p>
+        </div>
+        <div><span class="s-lbl" data-en="Stack" data-ja="技術スタック">Stack</span><div class="w-tags"><span class="w-tag">Python</span><span class="w-tag">FastAPI</span><span class="w-tag">Streamlit</span><span class="w-tag">Local LLM</span><span class="w-tag">MySQL</span><span class="w-tag">AWS</span></div></div>
+      </div></div>
     </div>
-    <div class="proj-card">
-      <div class="proj-type" data-en="Industry · Data" data-ja="業務 · データ分析">Industry · Data</div>
-      <div class="proj-title" data-en="Time Series Analysis Pipeline" data-ja="時系列分析パイプライン">Time Series Analysis Pipeline</div>
-      <p class="proj-desc"
-        data-en="Built data analysis and time series pipelines to extract actionable insights from industrial sensor data. Integrated into Streamlit dashboards for monitoring equipment performance trends."
-        data-ja="産業用センサーデータから知見を抽出する時系列分析パイプラインを構築。設備パフォーマンストレンドを監視するStreamlitダッシュボードに統合しました。">
-        Built data analysis and time series pipelines to extract actionable insights from industrial sensor data. Integrated into Streamlit dashboards for monitoring equipment performance trends.
-      </p>
-      <div class="proj-stack">
-        <span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Time Series</span>
-        <span class="tag">Streamlit</span><span class="tag">MySQL</span>
+ 
+    <div class="w-item" onclick="toggleWork(this)">
+      <div class="w-hdr">
+        <div><div class="w-ctx" data-en="Industry · Data · フクシマガリレイ" data-ja="業務 · データ · フクシマガリレイ">Industry · Data · フクシマガリレイ</div><div class="w-title" data-en="Time Series Analysis Pipeline" data-ja="時系列分析パイプライン">Time Series Analysis Pipeline</div></div>
+        <div><div class="w-yr">2025</div><span class="w-plus">+</span></div>
       </div>
+      <div class="w-body"><div class="w-body-in">
+        <div>
+          <span class="s-lbl" data-en="The problem" data-ja="課題">The problem</span>
+          <p class="s-txt" data-en="Equipment generates sensor data continuously — but without the right analysis, that data is just noise. The question isn't 'what happened?' but 'what does this pattern mean, and what comes next?'" data-ja="設備はセンサーデータを継続的に生成しますが、適切な分析なしではノイズです。「何が起きたか？」ではなく「このパターンは何を意味し、次に何が来るか？」が問いです。">Equipment generates sensor data continuously — but without the right analysis, that data is just noise. The question isn't 'what happened?' but 'what does this pattern mean, and what comes next?'</p>
+          <span class="s-lbl" data-en="What I built" data-ja="構築したもの">What I built</span>
+          <p class="s-txt" data-en="Built time series and data analysis pipelines to extract actionable insights from industrial sensor data. Integrated into <strong>Streamlit monitoring dashboards</strong> — turning raw signals into readable trends." data-ja="産業用センサーデータから実用的な知見を抽出する時系列・分析パイプラインを構築。<strong>Streamlit監視ダッシュボード</strong>に統合し、生のシグナルを読めるトレンドに変換しました。">Built time series and data analysis pipelines to extract actionable insights from industrial sensor data. Integrated into <strong>Streamlit monitoring dashboards</strong> — turning raw signals into readable trends.</p>
+        </div>
+        <div><span class="s-lbl" data-en="Stack" data-ja="技術スタック">Stack</span><div class="w-tags"><span class="w-tag">Python</span><span class="w-tag">Pandas</span><span class="w-tag">Time Series</span><span class="w-tag">Streamlit</span><span class="w-tag">MySQL</span></div></div>
+      </div></div>
     </div>
-    <div class="proj-card">
-      <div class="proj-type" data-en="Capstone · Shimadzu Corp" data-ja="卒業研究 · 島津製作所">Capstone · Shimadzu Corp</div>
-      <div class="proj-title" data-en="Automated Cap Opening &amp; Closing Mechanism" data-ja="自動容器開閉機構">Automated Cap Opening &amp; Closing Mechanism</div>
-      <p class="proj-desc" data-en="Automated mechanism for opening and closing screw-type laboratory container caps (15cl–50cl) in collaboration with Shimadzu Corporation — one of Japan's leading precision instrument companies." data-ja="島津製作所との共同プロジェクトで、ねじ式実験容器（15cl～50cl）の自動開閉機構を開発。日本を代表する精密機器メーカーの一つです。">
-        Automated mechanism for opening and closing screw-type laboratory container caps (15cl–50cl) in collaboration with Shimadzu Corporation — one of Japan's leading precision instrument companies.
-      </p>
-      <div class="proj-stack">
-        <span class="tag">SolidWorks CAD</span>
-        <span class="tag">Arduino</span>
-        <span class="tag">Servo Motors</span>
-        <span class="tag">IR Sensors</span>
-        <span class="tag">Electromagnets</span>
+ 
+    <div class="w-item" onclick="toggleWork(this)">
+      <div class="w-hdr">
+        <div><div class="w-ctx" data-en="Capstone · Shimadzu Corporation" data-ja="卒業研究 · 島津製作所">Capstone · Shimadzu Corporation</div><div class="w-title" data-en="Automated Cap Opening & Closing Mechanism" data-ja="自動容器開閉機構">Automated Cap Opening & Closing Mechanism</div></div>
+        <div><div class="w-yr">2024–25</div><span class="w-plus">+</span></div>
       </div>
-      <div class="award">★ Capstone Exhibition Award 2025</div>
+      <div class="w-body"><div class="w-body-in">
+        <div>
+          <span class="s-lbl" data-en="The problem" data-ja="課題">The problem</span>
+          <p class="s-txt" data-en="Lab technicians manually open and close hundreds of screw-type sample containers daily — a repetitive task that slows precision workflows and introduces human error." data-ja="研究技術者は毎日数百個のねじ式サンプル容器を手動で開閉しています。精密環境でのワークフローを遅らせ、ヒューマンエラーを招く繰り返し作業です。">Lab technicians manually open and close hundreds of screw-type sample containers daily — a repetitive task that slows precision workflows and introduces human error.</p>
+          <span class="s-lbl" data-en="What I built" data-ja="構築したもの">What I built</span>
+          <p class="s-txt" data-en="In collaboration with <strong>Shimadzu Corporation</strong>, designed and built an automated mechanism for 15cl–50cl lab containers using SolidWorks CAD, Arduino, servo motors, IR sensors, and electromagnets." data-ja="<strong>島津製作所</strong>との産学連携で、SolidWorks CAD・Arduino・サーボモーター・IRセンサー・電磁石を用いて15〜50cl実験容器の自動開閉機構を設計・製作しました。">In collaboration with <strong>Shimadzu Corporation</strong>, designed and built an automated mechanism for 15cl–50cl lab containers using SolidWorks CAD, Arduino, servo motors, IR sensors, and electromagnets.</p>
+          <div class="award">★ <span data-en="Capstone Exhibition Award 2025" data-ja="キャップストーン展示会賞 2025">Capstone Exhibition Award 2025</span></div>
+        </div>
+        <div><span class="s-lbl" data-en="Stack" data-ja="技術スタック">Stack</span><div class="w-tags"><span class="w-tag">SolidWorks CAD</span><span class="w-tag">Arduino</span><span class="w-tag">Servo Motors</span><span class="w-tag">IR Sensors</span><span class="w-tag">Electromagnets</span></div></div>
+      </div></div>
     </div>
-    <div class="proj-card">
-      <div class="proj-type" data-en="Pre-Capstone · Computer Vision" data-ja="プレキャップストーン · CV">Pre-Capstone · Computer Vision</div>
-      <div class="proj-title" data-en="Smart Showcase Management System" data-ja="スマートショーケース管理システム">Smart Showcase Management System</div>
-      <p class="proj-desc" data-en="Real-time shelf monitoring for retail stores using Raspberry Pi and computer vision with HSV color processing. Sent LINE Notify alerts on low stock, significantly reducing manual check dependency." data-ja="Raspberry PiとHSV色処理を用いたコンピュータビジョンで小売棚をリアルタイム監視。低在庫時にLINE通知を送信し、手動確認を大幅に削減しました。">
-        Real-time shelf monitoring for retail stores using Raspberry Pi and computer vision with HSV color processing. Sent LINE Notify alerts on low stock, significantly reducing manual check dependency.
-      </p>
-      <div class="proj-stack">
-        <span class="tag">Python</span>
-        <span class="tag">OpenCV</span>
-        <span class="tag">Raspberry Pi</span>
-        <span class="tag">IoT</span>
-        <span class="tag">API Integration</span>
-        <span class="tag">Computer Vision</span>
+ 
+    <div class="w-item" onclick="toggleWork(this)">
+      <div class="w-hdr">
+        <div><div class="w-ctx" data-en="Pre-Capstone · Computer Vision · フクシマガリレイ" data-ja="プレ卒研 · CV · フクシマガリレイ">Pre-Capstone · Computer Vision · フクシマガリレイ</div><div class="w-title" data-en="Smart Showcase Management System" data-ja="スマートショーケース管理システム">Smart Showcase Management System</div></div>
+        <div><div class="w-yr">2023–24</div><span class="w-plus">+</span></div>
       </div>
-      <div class="award">★ Pre-Capstone Exhibition Award</div>
+      <div class="w-body"><div class="w-body-in">
+        <div>
+          <span class="s-lbl" data-en="The problem" data-ja="課題">The problem</span>
+          <p class="s-txt" data-en="Retail staff spent significant time manually checking shelf stock — slow, inconsistent, and pulling people away from higher-value work." data-ja="小売スタッフは棚の在庫を手動確認するために多くの時間を費やしていました——遅く、不一致で、より価値の高い業務から人を遠ざけていました。">Retail staff spent significant time manually checking shelf stock — slow, inconsistent, and pulling people away from higher-value work.</p>
+          <span class="s-lbl" data-en="What I built" data-ja="構築したもの">What I built</span>
+          <p class="s-txt" data-en="Built a real-time shelf monitoring system using <strong>Raspberry Pi and OpenCV</strong> with HSV color processing. Auto-detected stock levels and sent <strong>LINE Notify alerts</strong> when shelves ran low. This collaboration with フクシマガリレイ directly led to my current role." data-ja="HSV色処理を用いた<strong>Raspberry PiとOpenCV</strong>でリアルタイム棚監視システムを構築。在庫低下時に<strong>LINE通知</strong>を自動送信。フクシマガリレイとの共同プロジェクトで、現在の職への採用に直結しました。">Built a real-time shelf monitoring system using <strong>Raspberry Pi and OpenCV</strong> with HSV color processing. Auto-detected stock levels and sent <strong>LINE Notify alerts</strong> when shelves ran low. This collaboration with フクシマガリレイ directly led to my current role.</p>
+          <div class="award">★ <span data-en="Pre-Capstone Exhibition Award" data-ja="プレキャップストーン展示会賞">Pre-Capstone Exhibition Award</span></div>
+        </div>
+        <div><span class="s-lbl" data-en="Stack" data-ja="技術スタック">Stack</span><div class="w-tags"><span class="w-tag">Python</span><span class="w-tag">OpenCV</span><span class="w-tag">Raspberry Pi</span><span class="w-tag">IoT</span><span class="w-tag">LINE Notify API</span></div></div>
+      </div></div>
     </div>
-    <div class="proj-card">
-      <div class="proj-type" data-en="Personal · Deep Learning" data-ja="個人プロジェクト · 深層学習">Personal · Deep Learning</div>
-      <div class="proj-title" data-en="ML &amp; CV Learning Projects" data-ja="機械学習・CV学習プロジェクト">ML &amp; CV Learning Projects</div>
-      <p class="proj-desc" data-en="Personal repository of machine learning experiments, deep learning implementations, and computer vision exploration projects — documenting the full learning journey from fundamentals to advanced models." data-ja="機械学習実験、深層学習実装、コンピュータビジョン探索プロジェクトの個人リポジトリ。基礎から先進モデルまで学習の全過程を記録しています。">
-        Personal repository of machine learning experiments, deep learning implementations, and computer vision exploration projects — documenting the full learning journey from fundamentals to advanced models.
-      </p>
-      <div class="proj-stack">
-        <span class="tag">Python</span>
-        <span class="tag">PyTorch</span>
-        <span class="tag">OpenCV</span>
-        <span class="tag">NumPy</span>
-        <span class="tag">Jupyter</span>
+ 
+  </div>
+</section>
+ 
+<hr class="div"/>
+ 
+<!-- EXPERIENCE -->
+<section id="exp" class="sec">
+  <div class="sec-in">
+    <div class="eye" data-en="Where I've been" data-ja="これまでの経歴">Where I've been</div>
+    <h2 class="st" data-en="Experience." data-ja="職務経歴。">Experience.</h2>
+    <div class="tl reveal">
+      <div class="tl-item">
+        <span class="tl-period" data-en="2025 — Present" data-ja="2025年 〜 現在">2025 — Present</span>
+        <div class="tl-role" data-en="ML & Software Developer" data-ja="機械学習・ソフトウェア開発者">ML & Software Developer</div>
+        <div class="tl-org">フクシマガリレイ株式会社 · Osaka, Japan</div>
+        <p class="tl-desc" data-en="Building ML models, integrating local LLMs, running time series and data analysis, and developing the full software stack — FastAPI, Streamlit, MySQL — that delivers AI to the people who need it." data-ja="MLモデルの構築、ローカルLLMの統合、時系列・データ分析、そしてAIを必要な人々に届けるフルスタック（FastAPI、Streamlit、MySQL）の開発を担当。">Building ML models, integrating local LLMs, running time series and data analysis, and developing the full software stack — FastAPI, Streamlit, MySQL — that delivers AI to the people who need it.</p>
+      </div>
+      <div class="tl-item">
+        <span class="tl-period" data-en="May 2020 — Sep 2022" data-ja="2020年5月 〜 2022年9月">May 2020 — Sep 2022</span>
+        <div class="tl-role" data-en="Podcast Host" data-ja="ポッドキャストホスト">Podcast Host</div>
+        <div class="tl-org">Guffadi Cast · Freelance</div>
+        <p class="tl-desc" data-en="Hosted a Nepali podcast for 2.5 years. Built real skills in <strong>communication, storytelling, and understanding audiences</strong> — skills that turned out to be surprisingly relevant in engineering." data-ja="2年半ネパール語ポッドキャストをホスト。<strong>コミュニケーション・ストーリーテリング・オーディエンス理解</strong>のスキルを磨き、エンジニアリングにも意外なほど活きています。">Hosted a Nepali podcast for 2.5 years. Built real skills in <strong>communication, storytelling, and understanding audiences</strong> — skills that turned out to be surprisingly relevant in engineering.</p>
+      </div>
+      <div class="tl-item">
+        <span class="tl-period" data-en="Jun 2022 — Present" data-ja="2022年6月 〜 現在">Jun 2022 — Present</span>
+        <div class="tl-role" data-en="Founder & Former Secretary" data-ja="創設者・元事務局長">Founder & Former Secretary</div>
+        <div class="tl-org">Rotaract Club of Dakshinkali · Volunteer</div>
+        <p class="tl-desc" data-en="Founding member and former Secretary. Led sanitation programs at Champadevi Temple. <strong>Building something from nothing</strong> — that skill transfers directly into building software." data-ja="創設メンバーおよび元事務局長。チャンパデヴィ寺院での衛生プログラムを主導。<strong>ゼロから何かを作る</strong>スキルは、ソフトウェア開発にも直結しています。">Founding member and former Secretary. Led sanitation programs at Champadevi Temple. <strong>Building something from nothing</strong> — that skill transfers directly into building software.</p>
       </div>
     </div>
   </div>
 </section>
-
-<div class="divider"></div>
-
-<!-- SKILLS -->
-<section id="skills">
-  <div class="sec-label" data-en="04 &nbsp;SKILLS" data-ja="04 &nbsp;スキル">04 &nbsp;SKILLS</div>
-  <h2 data-en="Technical Skills" data-ja="技術スキル">Technical Skills</h2>
-  <div class="skill-cats">
-    <div class="skill-cat">
-      <div class="skill-cat-title" data-en="ML &amp; AI" data-ja="ML・AI">ML &amp; AI</div>
-      <div class="chips">
-        <span class="chip" data-en="Machine Learning" data-ja="機械学習">Machine Learning</span>
-        <span class="chip" data-en="Deep Learning" data-ja="深層学習">Deep Learning</span>
-        <span class="chip">Local LLMs</span>
-        <span class="chip" data-en="Time Series Analysis" data-ja="時系列分析">Time Series Analysis</span>
-        <span class="chip" data-en="Data Analysis" data-ja="データ分析">Data Analysis</span>
-        <span class="chip">OpenCV</span>
-      </div>
+ 
+<hr class="div"/>
+ 
+<!-- CAPABILITIES -->
+<section id="caps" class="sec">
+  <div class="sec-in">
+    <div class="eye" data-en="What I bring" data-ja="私が持つもの">What I bring</div>
+    <h2 class="st" data-en="Capabilities." data-ja="スキル・能力。">Capabilities.</h2>
+  </div>
+  <div class="caps-grid reveal">
+    <div class="c-card">
+      <span class="c-icon">⟳</span>
+      <div class="c-title" data-en="ML Engineering" data-ja="ML エンジニアリング">ML Engineering</div>
+      <p class="c-desc" data-en="Training, evaluating, and deploying models that actually work outside the notebook." data-ja="ノートブックの外でも実際に動くモデルの訓練・評価・デプロイ。">Training, evaluating, and deploying models that actually work outside the notebook.</p>
+      <div class="c-chips"><span class="c-chip">PyTorch</span><span class="c-chip">Scikit-learn</span><span class="c-chip">Time Series</span><span class="c-chip">Local LLMs</span></div>
     </div>
-    <div class="skill-cat">
-      <div class="skill-cat-title" data-en="Software Dev" data-ja="ソフトウェア開発">Software Dev</div>
-      <div class="chips">
-        <span class="chip">Python</span>
-        <span class="chip">FastAPI</span>
-        <span class="chip">Streamlit</span>
-        <span class="chip">MySQL</span>
-        <span class="chip">GitHub</span>
-        <span class="chip">REST APIs</span>
-      </div>
+    <div class="c-card">
+      <span class="c-icon">⫸</span>
+      <div class="c-title" data-en="Data Analysis" data-ja="データ分析">Data Analysis</div>
+      <p class="c-desc" data-en="Finding patterns in messy data and turning them into decisions people can act on." data-ja="乱雑なデータからパターンを見つけ、行動できる意思決定に変換。">Finding patterns in messy data and turning them into decisions people can act on.</p>
+      <div class="c-chips"><span class="c-chip">Pandas</span><span class="c-chip">NumPy</span><span class="c-chip">MySQL</span><span class="c-chip">Visualization</span></div>
     </div>
-    <div class="skill-cat">
-      <div class="skill-cat-title" data-en="Cloud &amp; Tools" data-ja="クラウド・ツール">Cloud &amp; Tools</div>
-      <div class="chips">
-        <span class="chip">AWS</span>
-        <span class="chip">PyTorch</span>
-        <span class="chip">Pandas</span>
-        <span class="chip">NumPy</span>
-        <span class="chip">MATLAB</span>
-        <span class="chip">Jupyter</span>
-      </div>
+    <div class="c-card">
+      <span class="c-icon">⬡</span>
+      <div class="c-title" data-en="Software Development" data-ja="ソフトウェア開発">Software Development</div>
+      <p class="c-desc" data-en="Building the APIs, dashboards, and pipelines that make AI usable in the real world." data-ja="AIを現実世界で使えるようにするAPI・ダッシュボード・パイプラインの構築。">Building the APIs, dashboards, and pipelines that make AI usable in the real world.</p>
+      <div class="c-chips"><span class="c-chip">FastAPI</span><span class="c-chip">Streamlit</span><span class="c-chip">Python</span><span class="c-chip">GitHub</span></div>
     </div>
-    <div class="skill-cat">
-      <div class="skill-cat-title" data-en="Hardware &amp; CAD" data-ja="ハードウェア・CAD">Hardware &amp; CAD</div>
-      <div class="chips">
-        <span class="chip">Raspberry Pi</span>
-        <span class="chip">Arduino</span>
-        <span class="chip">SolidWorks CAD</span>
-        <span class="chip">IoT</span>
-      </div>
+    <div class="c-card">
+      <span class="c-icon">◎</span>
+      <div class="c-title" data-en="Communication" data-ja="コミュニケーション">Communication</div>
+      <p class="c-desc" data-en="Explaining complex systems to non-technical people. Built long before I built models." data-ja="複雑なシステムを非技術者に説明する力。モデルを作るずっと前から培ってきたスキル。">Explaining complex systems to non-technical people. Built long before I built models.</p>
+      <div class="c-chips"><span class="c-chip">English</span><span class="c-chip">日本語</span><span class="c-chip">नेपाली</span><span class="c-chip">Storytelling</span></div>
     </div>
   </div>
 </section>
-
-<div class="divider"></div>
-
+ 
+<hr class="div"/>
+ 
+<!-- EXPLORING -->
+<section id="exploring" class="sec">
+  <div class="sec-in">
+    <div class="eye" data-en="What's next" data-ja="次へ向けて">What's next</div>
+    <h2 class="st" data-en="Where I'm going." data-ja="目指す方向。">Where I'm going.</h2>
+  </div>
+  <div class="exp-box reveal">
+    <span class="exp-lbl" data-en="Openly exploring" data-ja="現在探求中">Openly exploring</span>
+    <div class="exp-title" data-en="I don't think the most interesting people know exactly where they're going." data-ja="最も面白い人は、自分がどこへ向かうかを正確に知っているわけではないと思います。">I don't think the most interesting people know exactly where they're going.</div>
+    <p class="exp-body" data-en="I know what I'm good at: understanding systems, building models, writing the software that puts them to work. <strong>Where that leads is an open question</strong> — and I think that's honest." data-ja="私が得意なことはわかっています：システムを理解し、モデルを構築し、それを機能させるソフトウェアを書くこと。<strong>それがどこへ向かうかは未解決の問い</strong>——それが正直なところです。">I know what I'm good at: understanding systems, building models, writing the software that puts them to work. <strong>Where that leads is an open question</strong> — and I think that's honest.</p>
+    <div class="exp-items">
+      <div class="exp-item" data-en="Considering graduate research in ML, AI systems, or related areas — particularly problems where understanding complex behavior matters." data-ja="ML・AIシステムなど関連分野での大学院研究を検討中——特に複雑な挙動の理解が重要な問題に関心があります。">Considering graduate research in ML, AI systems, or related areas — particularly problems where understanding complex behavior matters.</div>
+      <div class="exp-item" data-en="Building in public — because the learning process is part of the portfolio." data-ja="公開学習中——学ぶプロセス自体がポートフォリオの一部だから。">Building in public — because the learning process is part of the portfolio.</div>
+      <div class="exp-item" data-en="Interested in roles where the work is genuinely hard, the team thinks carefully, and the output matters to real people." data-ja="本当に難しい仕事、丁寧に考えるチーム、実際の人々に影響するアウトプット——そんな環境に興味があります。">Interested in roles where the work is genuinely hard, the team thinks carefully, and the output matters to real people.</div>
+    </div>
+  </div>
+</section>
+ 
+<hr class="div"/>
+ 
 <!-- EDUCATION -->
-<section id="education">
-  <div class="sec-label" data-en="05 &nbsp;EDUCATION" data-ja="05 &nbsp;学歴">05 &nbsp;EDUCATION</div>
-  <h2 data-en="Education" data-ja="学歴">Education</h2>
-  <div class="edu-list">
-    <div class="edu-item">
-      <div class="edu-icon">KU</div>
-      <div>
-        <div class="edu-school">Kyoto University of Advanced Science</div>
-        <div class="edu-degree" data-en="Bachelor of Engineering — Electrical &amp; Mechanical Systems" data-ja="工学部 機械電気システム工学科">Bachelor of Engineering — Electrical &amp; Mechanical Systems</div>
-        <div class="edu-date" data-en="Sep 2021 – Sep 2025 · Graduated · Kyoto, Japan" data-ja="2021年9月 – 2025年9月 · 卒業 · 京都、日本">Sep 2021 – Sep 2025 · Graduated · Kyoto, Japan</div>
+<section id="edu" class="sec">
+  <div class="sec-in">
+    <div class="eye" data-en="Academic background" data-ja="学歴">Academic background</div>
+    <h2 class="st" data-en="Education." data-ja="学歴。">Education.</h2>
+    <div class="edu-grid reveal">
+      <div class="edu-card">
+        <span class="edu-badge" data-en="Engineering · 2021–2025" data-ja="工学 · 2021–2025">Engineering · 2021–2025</span>
+        <div class="edu-school" data-en="Kyoto University of Advanced Science" data-ja="京都先端科学大学">Kyoto University of Advanced Science</div>
+        <div class="edu-deg" data-en="B.E. Electrical & Mechanical Systems · Graduated 2025" data-ja="工学部 機械電気システム工学科 · 2025年卒業">B.E. Electrical & Mechanical Systems · Graduated 2025</div>
+        <div class="edu-date">Kyoto, Japan</div>
       </div>
-    </div>
-    <div class="edu-item">
-      <div class="edu-icon">DAV</div>
-      <div>
+      <div class="edu-card">
+        <span class="edu-badge" data-en="High School · 2017–2019" data-ja="高校 · 2017–2019">High School · 2017–2019</span>
         <div class="edu-school">DAV College, Nepal</div>
-        <div class="edu-degree" data-en="High School" data-ja="高等学校">High School</div>
-        <div class="edu-date" data-en="Sep 2017 – Sep 2019 · Nepal" data-ja="2017年9月 – 2019年9月 · ネパール">Sep 2017 – Sep 2019 · Nepal</div>
+        <div class="edu-deg" data-en="High School Certificate" data-ja="高校卒業証書">High School Certificate</div>
+        <div class="edu-date">Nepal</div>
       </div>
     </div>
   </div>
 </section>
-
-<div class="divider"></div>
-
+ 
+<hr class="div"/>
+ 
 <!-- CONTACT -->
 <section id="contact">
-  <div class="sec-label" data-en="06 &nbsp;CONTACT" data-ja="06 &nbsp;連絡">06 &nbsp;CONTACT</div>
-  <h2 data-en="Get in Touch" data-ja="お問い合わせ">Get in Touch</h2>
-  <div class="contact-wrap">
-    <div>
-      <p class="contact-intro" data-en="Open to new opportunities, research collaborations, and interesting ML/AI projects. Based in Osaka, Japan — available in both English and Japanese." data-ja="新しい機会、共同研究、ML・AIプロジェクトへの参加を歓迎します。大阪在住、日本語・英語どちらでも対応可能です。">
-        Open to new opportunities, research collaborations, and interesting ML/AI projects. Based in Osaka, Japan — available in both English and Japanese.
-      </p>
-      <div class="c-links">
-        <a href="https://github.com/PRaruj" class="c-link" target="_blank" rel="noopener">
-          <div class="c-icon">{}</div>
-          <span>github.com/PRaruj</span>
-        </a>
-        <a href="https://www.linkedin.com/in/praruj-thapa/" class="c-link" target="_blank" rel="noopener">
-          <div class="c-icon">in</div>
-          <span>linkedin.com/in/praruj-thapa</span>
-        </a>
-        <a href="mailto:thapa.praruj@gmail.com" class="c-link">
-          <div class="c-icon">✉</div>
-          <span>thapa.praruj@gmail.com</span>
-        </a>
-      </div>
-    </div>
+  <div class="ct-head" data-en="Let's build something<br>worth understanding." data-ja="理解する価値のある<br>ものを一緒に作りましょう。">Let's build something<br>worth understanding.</div>
+  <p class="ct-sub" data-en="Open to opportunities, collaborations, and conversations — in Osaka, across Japan, or anywhere. I read everything." data-ja="機会・コラボレーション・対話を歓迎します——大阪、日本全国、またはどこからでも。すべてのメッセージを読んでいます。">Open to opportunities, collaborations, and conversations — in Osaka, across Japan, or anywhere. I read everything.</p>
+  <div class="ct-links">
+    <a href="mailto:thapa.praruj@gmail.com" class="ct-link"><span class="ct-icon">✉</span> thapa.praruj@gmail.com</a>
+    <a href="https://github.com/PRaruj" class="ct-link" target="_blank" rel="noopener"><span class="ct-icon">{}</span> github.com/PRaruj</a>
+    <a href="https://www.linkedin.com/in/praruj-thapa/" class="ct-link" target="_blank" rel="noopener"><span class="ct-icon">in</span> linkedin.com/in/praruj-thapa</a>
   </div>
+  <p class="ct-note" data-en="Available in English and Japanese." data-ja="日本語・英語どちらでも対応します。">Available in English and Japanese.</p>
 </section>
-
+ 
 <footer>
-  <span>Praruj Thapa</span> · <span data-en="Osaka, Japan" data-ja="大阪、日本">Osaka, Japan</span> · ML &amp; AI Software Developer
+  <div><span>Praruj Thapa</span> · ML & AI Developer · Osaka, Japan</div>
+  <div data-en="Building systems that understand." data-ja="理解するシステムを構築する。">Building systems that understand.</div>
 </footer>
-
+ 
 <script>
-let currentLang = 'en';
-function toggleLanguage() {
-  currentLang = currentLang === 'en' ? 'ja' : 'en';
-  const btn = document.getElementById('lang-btn');
-  btn.textContent = currentLang === 'en' ? '日本語' : 'English';
-  document.documentElement.lang = currentLang;
-  document.querySelectorAll('[data-en]').forEach(el => {
-    const content = currentLang === 'ja' ? (el.dataset.ja || el.dataset.en) : el.dataset.en;
-    if (content) el.innerHTML = content;
+function setLang(l){
+  document.documentElement.lang=l;
+  document.body.classList.toggle("jp",l==="ja");
+  document.getElementById("btn-en").classList.toggle("on",l==="en");
+  document.getElementById("btn-ja").classList.toggle("on",l==="ja");
+  document.querySelectorAll("[data-en]").forEach(el=>{
+    const v=l==="ja"?(el.dataset.ja||el.dataset.en):el.dataset.en;
+    if(v!==undefined)el.innerHTML=v;
   });
 }
+const secs=document.querySelectorAll("section[id]");
+const lnks=document.querySelectorAll(".nav-links a[href^='#']");
+window.addEventListener("scroll",()=>{
+  let c="";
+  secs.forEach(s=>{if(window.scrollY>=s.offsetTop-80)c=s.id;});
+  lnks.forEach(a=>a.classList.toggle("active",a.getAttribute("href")==="#"+c));
+},{passive:true});
+function toggleNav(){document.getElementById("nav").classList.toggle("open");}
+lnks.forEach(a=>a.addEventListener("click",()=>document.getElementById("nav").classList.remove("open")));
+function toggleWork(el){
+  const was=el.classList.contains("open");
+  document.querySelectorAll(".w-item.open").forEach(i=>i.classList.remove("open"));
+  if(!was)el.classList.add("open");
+}
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add("in");});},{threshold:0.1});
+document.querySelectorAll(".reveal").forEach(el=>obs.observe(el));
 </script>
-
 </body>
 </html>
